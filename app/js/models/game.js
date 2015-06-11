@@ -2,7 +2,7 @@ module.exports = function(gamesFactory, idGame) {
 	this.gamesFactory = gamesFactory;
 	this.id = idGame;
 	this.tiles;
-	this.matchedTiles;
+	this.matchedTiles = [];
 	this.freeTiles = [];
 	
 	var self = this
@@ -13,11 +13,12 @@ module.exports = function(gamesFactory, idGame) {
 			//console.log(self.matchesLeft());
 		});
 
-		/*this.gamesFactory.getMatchedTiles(this.id, function(matchedTiles){
+		this.gamesFactory.getMatchedTiles(this.id, function(matchedTiles){
 			self.matchedTiles = matchedTiles;
-		});*/
+			//console.log(self.matchesLeft());
+		});
     };
-	
+
 	this.checkMove = function(tile, tile2) {
 		//var tileFree = this.checkTileFreedom(tile);
 		//var tile2Free = this.checkTileFreedom(tile2);
@@ -26,12 +27,8 @@ module.exports = function(gamesFactory, idGame) {
 				//return true
 			//}
 		//}
-		/*if ((tile.tile.matchesWholeSuit && tile.tile.suit == tile2.tile.suit) ||
-			(tile2.tile.machtesWholeSuit && tile.tile.suit == tile2.tile.suit) ||
+		if (((tile.tile.matchesWholeSuit || tile2.tile.machtesWholeSuit) && tile.tile.suit == tile2.tile.suit) ||
 			(tile.tile.name == tile2.tile.name && tile.tile.suit == tile2.tile.suit)) {
-			return true;
-		}*/
-		if ((tile.tile.matchesWholeSuit && tile.tile.suit == tile2.tile.suit)) {
 			return true;
 		}
 		return false
@@ -88,6 +85,8 @@ module.exports = function(gamesFactory, idGame) {
 					self.tiles.splice(x, 1);
 				}
 			}
+			self.matchedTiles.push(matchedTile1);
+			self.matchedTiles.push(matchedTile2);
 		});
 	}
 	

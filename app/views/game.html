@@ -14,5 +14,6 @@
 	</div>
 	
 	<div id="matchedTiles">
+		<div ng-repeat="tile in gameController.matchedTiles" class="tile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
 	</div>
 </div>

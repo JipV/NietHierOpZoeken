@@ -26,8 +26,6 @@ module.exports = function($scope, gamesFactory, gameService) {
 
 	this.selectTile = function(event, selectedTile) {
 
-		console.log(selectedTile);
-
 		// Als de tegel niet vrij is, dan doe niks
 		if (!this.game.checkTileFreedom(selectedTile)) {
 			return;
@@ -75,6 +73,9 @@ module.exports = function($scope, gamesFactory, gameService) {
 
 	this.playerHasMatch = function(tile1, tile2) {
 		this.game.addMatch(tile1._id, tile2._id);
+		for (var i = 0; i < this.game.matchedTiles.length; i++) {
+			console.log(this.game.matchedTiles[i]);
+		}
 	}
 
 	this.checkMatchesLeft = function() {
