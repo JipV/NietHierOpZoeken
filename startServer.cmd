@@ -1,0 +1,2 @@
+cd Dist
+http-server

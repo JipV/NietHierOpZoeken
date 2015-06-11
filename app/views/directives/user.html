@@ -1,0 +1,13 @@
+<div class="well">
+	<div class="jumbotron">
+		<div ng-show="uc.isLoggedIn()">
+		  	<h1>oAuth</h1>
+		  	<p>Je bent ingelogd als {{uc.user}}</p>
+	  	</div>
+	  	<div ng-show="!uc.isLoggedIn()">
+	  	  	<h1>oAuth</h1>
+		  	<p>Je bent niet ingelogd!</p>
+		  	<p><a class="btn btn-primary btn-lg" href="#/login" role="button">Login</a></p>
+	  	</div>
+	</div>
+</div>

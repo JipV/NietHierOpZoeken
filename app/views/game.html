@@ -1,0 +1,18 @@
+<div ng-controller="GameController as gameController">
+
+	<ul class="nav nav-pills">
+		<!--<li role="presentation" class="{{gamesController.activeTab == 'open' ? 'active tabBarButton': 'tabBarButton'}}">
+			<a class="pacifico bigText" ng-click="gamesController.goToOpenGames()">Open</a>
+		</li>
+		<li role="presentation" class="{{gamesController.activeTab == 'playing' ? 'active tabBarButton': 'tabBarButton'}}">
+			<a class="pacifico bigText" ng-click="gamesController.goToPlayingGames()">Playing</a>
+		</li>-->
+	</ul>
+	
+	<div id="gameboard">
+		<tile ng-repeat="tile in gameController.game.tiles" ng-click="gameController.selectTile($event,tile)"></tile>
+	</div>
+	
+	<div id="matchedTiles">
+	</div>
+</div>
