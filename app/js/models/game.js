@@ -26,12 +26,9 @@ module.exports = function(gamesFactory, idGame) {
 				//return true
 			//}
 		//}
-		/*if ((tile.tile.matchesWholeSuit && tile.tile.suit == tile2.tile.suit) ||
+		if ((tile.tile.matchesWholeSuit && tile.tile.suit == tile2.tile.suit) ||
 			(tile2.tile.machtesWholeSuit && tile.tile.suit == tile2.tile.suit) ||
 			(tile.tile.name == tile2.tile.name && tile.tile.suit == tile2.tile.suit)) {
-			return true;
-		}*/
-		if ((tile.tile.matchesWholeSuit && tile.tile.suit == tile2.tile.suit)) {
 			return true;
 		}
 		return false
