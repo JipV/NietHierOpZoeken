@@ -72,16 +72,20 @@ module.exports = function($scope, gamesFactory, gameService) {
 	}
 
 	this.playerHasMatch = function(tile1, tile2) {
-		this.game.addMatch(tile1._id, tile2._id);
-		for (var i = 0; i < this.game.matchedTiles.length; i++) {
-			console.log(this.game.matchedTiles[i]);
-		}
+		this.game.addMatch(tile1, tile2);
 	}
 
 	this.checkMatchesLeft = function() {
 		if (!this.game.matchesLeft()) {
 			alert("There are no more matches. The game is over.");
 		}
+	}
+
+	this.filterMatchedTiles = function(tile) {
+	    if (tile.match.foundBy == window.localStorage.getItem("email")) {
+	        return true;
+	    }
+	    return false;
 	}
 
 }

@@ -13,7 +13,7 @@
 		<tile ng-repeat="tile in gameController.game.tiles" ng-click="gameController.selectTile($event,tile)"></tile>
 	</div>
 	
-	<div id="matchedTiles">
-		<div ng-repeat="tile in gameController.matchedTiles" class="tile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
+	<div id="matchedTiles" ng-repeat="tile in gameController.game.matchedTiles | filter: gameController.filterMatchedTiles">
+		<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
 	</div>
 </div>

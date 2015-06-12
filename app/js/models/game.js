@@ -10,23 +10,22 @@ module.exports = function(gamesFactory, idGame) {
 	this.getTiles = function() {
 		this.gamesFactory.getTiles(this.id, function(tiles){
 			self.tiles = tiles;
-			//console.log(self.matchesLeft());
 		});
 
 		this.gamesFactory.getMatchedTiles(this.id, function(matchedTiles){
+
 			self.matchedTiles = matchedTiles;
-			//console.log(self.matchesLeft());
+
+			self.matchedTiles.sort(function(a, b) {
+				var dateA = new Date(a.match.foundOn);
+				var dateB = new Date(b.match.foundOn);
+				return dateA - dateB;
+			});
+
 		});
     };
 
 	this.checkMove = function(tile, tile2) {
-		//var tileFree = this.checkTileFreedom(tile);
-		//var tile2Free = this.checkTileFreedom(tile2);
-		//if (tileFree && tile2Free) {
-			//if (tile.tile.name == tile2.tile.name && tile.tile.suit == tile2.tile.suit) {
-				//return true
-			//}
-		//}
 		if (((tile.tile.matchesWholeSuit || tile2.tile.machtesWholeSuit) && tile.tile.suit == tile2.tile.suit) ||
 			(tile.tile.name == tile2.tile.name && tile.tile.suit == tile2.tile.suit)) {
 			return true;
@@ -73,20 +72,55 @@ module.exports = function(gamesFactory, idGame) {
 		return free;
 	}
 
-	this.addMatch = function(idTile1, idTile2){
-		self.gamesFactory.addMatch(self.id, idTile1, idTile2, function(matchedTiles){
+	this.addMatch = function(tile1, tile2){
+		self.gamesFactory.addMatch(self.id, tile1._id, tile2._id, function(matchedTiles){
 			var matchedTile1 = matchedTiles[0];
 			var matchedTile2 = matchedTiles[1];
-			//console.log(matchedTile1);
-			//console.log(matchedTile2);
 			for(var x = 0; x < self.tiles.length; x++){
 				if(self.tiles[x]._id == matchedTile1._id || self.tiles[x]._id == matchedTile2._id){
-					//console.log("Splicing tile: " + self.tiles[x]._id)
 					self.tiles.splice(x, 1);
 				}
 			}
+
+			if (matchedTile1.tile == tile1.tile._id && matchedTile2.tile == tile2.tile._id) {
+				matchedTile1.tile =  {
+					"_id": tile1.tile._id,
+					"id": tile1.tile.id,
+					"matchesWholeSuit": tile1.tile.matchesWholeSuit,
+					"suit": tile1.tile.suit,
+					"name": tile1.tile.name
+				};
+				matchedTile2.tile =  {
+					"_id": tile2.tile._id,
+					"id": tile2.tile.id,
+					"matchesWholeSuit": tile2.tile.matchesWholeSuit,
+					"suit": tile2.tile.suit,
+					"name": tile2.tile.name
+				};
+			}
+			else {
+				matchedTile1.tile =  {
+					"_id": tile2.tile._id,
+					"id": tile2.tile.id,
+					"matchesWholeSuit": tile2.tile.matchesWholeSuit,
+					"suit": tile2.tile.suit,
+					"name": tile2.tile.name
+				};
+				matchedTile2.tile =  {
+					"_id": tile1.tile._id,
+					"id": tile1.tile.id,
+					"matchesWholeSuit": tile1.tile.matchesWholeSuit,
+					"suit": tile1.tile.suit,
+					"name": tile1.tile.name
+				};
+			}
+		
 			self.matchedTiles.push(matchedTile1);
 			self.matchedTiles.push(matchedTile2);
+			
+			/*for (var i = 0; i < self.matchedTiles.length; i++) {
+				console.log(self.matchedTiles[i]);
+			}*/
 		});
 	}
 	

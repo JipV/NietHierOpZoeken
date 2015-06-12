@@ -68,7 +68,7 @@ module.exports = function($http, urlFactory) {
     };
 
     gamesFactory.getMatchedTiles = function (id, callBack) {
-        return $http.get(urlFactory + urlBase + '/' + id + '/Tiles/matches').
+        return $http.get(urlFactory + urlBase + '/' + id + '/Tiles/?matched=true').
         success(function(data, status, headers, config) {
             callBack(data);
         }).
