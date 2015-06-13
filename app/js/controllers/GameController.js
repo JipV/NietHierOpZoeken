@@ -81,11 +81,40 @@ module.exports = function($scope, gamesFactory, gameService) {
 		}
 	}
 
-	this.filterMatchedTiles = function(tile) {
+	/*this.filterMatchedTiles = function(tile) {
 	    if (tile.match.foundBy == window.localStorage.getItem("email")) {
 	        return true;
 	    }
 	    return false;
+	}*/
+
+	this.tileNotMatched = function(tile) {
+	    if (!tile.hasOwnProperty('match')) {
+	        return true;
+	    }
+	    return false;
 	}
+
+	this.tileMatched = function(tile) {
+	    if (tile.hasOwnProperty('match')) {
+	        return true;
+	    }
+	    return false;
+	}
+
+	this.sortMatchedTiles = function(tiles) {
+		return function(items) {  
+			items.sort(function(a,b) {
+				var dateA = new Date(a.match.foundOn);
+				var dateB = new Date(b.match.foundOn);
+
+				if (dateA > dateB) return 1;
+				if (dateA < dateB) return -1;         
+				return 0;
+			})
+		}
+	};
+
+
 
 }

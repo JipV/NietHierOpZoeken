@@ -10,10 +10,14 @@
 	</ul>
 	
 	<div id="gameboard">
-		<tile ng-repeat="tile in gameController.game.tiles" ng-click="gameController.selectTile($event,tile)"></tile>
+		<tile ng-repeat="tile in gameController.game.tiles | filter: gameController.tileNotMatched" ng-click="gameController.selectTile($event, tile)"></tile>
 	</div>
 	
-	<div id="matchedTiles" ng-repeat="tile in gameController.game.matchedTiles | filter: gameController.filterMatchedTiles">
+	<!--<div id="matchedTiles" ng-repeat="tile in gameController.game.matchedTiles | filter: gameController.filterMatchedTiles">
+		<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
+	</div>-->
+
+	<div id="matchedTiles" ng-repeat="tile in gameController.game.tiles | filter: gameController.tileMatched | orderBy: gameController.sortMatchedTiles">
 		<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
 	</div>
 </div>
