@@ -1,5 +1,7 @@
-module.exports = function($scope, gamesFactory, gameService) {
+module.exports = function($scope, $state, gamesFactory, gameService) {
 	
+	this.activeTab = "gameboard";
+
 	var Game = require("./../models/game");
 	this.game = new Game(gamesFactory, gameService.getGame()._id);
 	this.game.getTiles();
@@ -102,19 +104,16 @@ module.exports = function($scope, gamesFactory, gameService) {
 	    return false;
 	}
 
-	this.sortMatchedTiles = function(tiles) {
-		return function(items) {  
-			items.sort(function(a,b) {
-				var dateA = new Date(a.match.foundOn);
-				var dateB = new Date(b.match.foundOn);
+	this.goToGameboard = function(){
+		this.activeTab = 'gameboard';
+		$state.go('game.gameboard');
+	}
 
-				if (dateA > dateB) return 1;
-				if (dateA < dateB) return -1;         
-				return 0;
-			})
-		}
-	};
-
-
+	this.goToPlayers = function(){
+		this.activeTab = 'players';
+		$state.go('game.players')
+	}
+	
+	$state.go('game.gameboard');
 
 }

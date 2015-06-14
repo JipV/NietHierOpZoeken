@@ -1,23 +1,14 @@
-<div ng-controller="GameController as gameController">
+<div>
 
 	<ul class="nav nav-pills">
-		<!--<li role="presentation" class="{{gamesController.activeTab == 'open' ? 'active tabBarButton': 'tabBarButton'}}">
-			<a class="pacifico bigText" ng-click="gamesController.goToOpenGames()">Open</a>
+		<li role="presentation" class="{{gameController.activeTab == 'gameboard' ? 'active tabBarButton': 'tabBarButton'}}">
+			<a class="pacifico bigText" ng-click="gameController.goToGameboard()">Gameboard</a>
 		</li>
-		<li role="presentation" class="{{gamesController.activeTab == 'playing' ? 'active tabBarButton': 'tabBarButton'}}">
-			<a class="pacifico bigText" ng-click="gamesController.goToPlayingGames()">Playing</a>
-		</li>-->
+		<li role="presentation" class="{{gameController.activeTab == 'players' ? 'active tabBarButton': 'tabBarButton'}}">
+			<a class="pacifico bigText" ng-click="gameController.goToPlayers()">Players</a>
+		</li>
 	</ul>
-	
-	<div id="gameboard">
-		<tile ng-repeat="tile in gameController.game.tiles | filter: gameController.tileNotMatched" ng-click="gameController.selectTile($event, tile)"></tile>
-	</div>
-	
-	<!--<div id="matchedTiles" ng-repeat="tile in gameController.game.matchedTiles | filter: gameController.filterMatchedTiles">
-		<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
-	</div>-->
 
-	<div id="matchedTiles" ng-repeat="tile in gameController.game.tiles | filter: gameController.tileMatched | orderBy: gameController.sortMatchedTiles">
-		<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
-	</div>
+	<div ui-view></div>
+	
 </div>

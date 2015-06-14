@@ -1,0 +1,3 @@
+<div id="matchedTiles" ng-repeat="tile in gameController.game.tiles | filter: gameController.tileMatched | orderBy: 'match.foundOn'">
+	<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
+</div>

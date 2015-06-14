@@ -80,7 +80,6 @@ module.exports = function($http, urlFactory) {
     gamesFactory.addMatch = function (idGame, idTile1, idTile2, callBack) {
         return $http.post(urlFactory + urlBase + '/' + idGame + '/Tiles/matches', {tile1Id: idTile1, tile2Id: idTile2}).
 		success(function(data, status, headers, config) {
-            //console.log(data)
 			callBack(data);
 		}).
 		error(function(data, status, headers, config){

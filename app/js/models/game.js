@@ -2,7 +2,6 @@ module.exports = function(gamesFactory, idGame) {
 	this.gamesFactory = gamesFactory;
 	this.id = idGame;
 	this.tiles;
-	//this.matchedTiles = [];
 	this.freeTiles = [];
 	
 	var self = this
@@ -10,25 +9,7 @@ module.exports = function(gamesFactory, idGame) {
 	this.getTiles = function() {
 		this.gamesFactory.getTiles(this.id, function(tiles){
 			self.tiles = tiles;
-
-			/*for (var i = 0; i < tiles.length; i++) {
-				console.log(tiles[i]);
-			}*/
 		});
-
-		/*this.gamesFactory.getMatchedTiles(this.id, function(matchedTiles){
-
-			self.matchedTiles = matchedTiles;
-
-			self.matchedTiles.sort(function(a, b) {
-				var dateA = new Date(a.match.foundOn);
-				var dateB = new Date(b.match.foundOn);
-				return dateA - dateB;
-			});
-
-		});*/
-
-
     };
 
 	this.checkMove = function(tile, tile2) {
@@ -82,47 +63,6 @@ module.exports = function(gamesFactory, idGame) {
 		self.gamesFactory.addMatch(self.id, tile1._id, tile2._id, function(matchedTiles){
 			var matchedTile1 = matchedTiles[0];
 			var matchedTile2 = matchedTiles[1];
-			/*for(var x = 0; x < self.tiles.length; x++){
-				if(self.tiles[x]._id == matchedTile1._id || self.tiles[x]._id == matchedTile2._id){
-					self.tiles.splice(x, 1);
-				}
-			}
-
-			if (matchedTile1.tile == tile1.tile._id && matchedTile2.tile == tile2.tile._id) {
-				matchedTile1.tile =  {
-					"_id": tile1.tile._id,
-					"id": tile1.tile.id,
-					"matchesWholeSuit": tile1.tile.matchesWholeSuit,
-					"suit": tile1.tile.suit,
-					"name": tile1.tile.name
-				};
-				matchedTile2.tile =  {
-					"_id": tile2.tile._id,
-					"id": tile2.tile.id,
-					"matchesWholeSuit": tile2.tile.matchesWholeSuit,
-					"suit": tile2.tile.suit,
-					"name": tile2.tile.name
-				};
-			}
-			else {
-				matchedTile1.tile =  {
-					"_id": tile2.tile._id,
-					"id": tile2.tile.id,
-					"matchesWholeSuit": tile2.tile.matchesWholeSuit,
-					"suit": tile2.tile.suit,
-					"name": tile2.tile.name
-				};
-				matchedTile2.tile =  {
-					"_id": tile1.tile._id,
-					"id": tile1.tile.id,
-					"matchesWholeSuit": tile1.tile.matchesWholeSuit,
-					"suit": tile1.tile.suit,
-					"name": tile1.tile.name
-				};
-			}
-		
-			self.matchedTiles.push(matchedTile1);
-			self.matchedTiles.push(matchedTile2);*/
 
 			if (matchedTile1.tile == tile1.tile._id && matchedTile2.tile == tile2.tile._id) {
 				tile1.match = matchedTile1.match;
@@ -132,10 +72,6 @@ module.exports = function(gamesFactory, idGame) {
 				tile1.match = matchedTile2.match;
 				tile2.match = matchedTile1.match;
 			}
-			
-			/*for (var i = 0; i < self.matchedTiles.length; i++) {
-				console.log(self.matchedTiles[i]);
-			}*/
 		});
 	}
 	
