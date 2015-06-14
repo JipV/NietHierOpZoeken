@@ -3,6 +3,7 @@
 		<span class="label label-info">{{ game.gameTemplate._id }}</span> 
 		<span ng-show="game.state == 'open'" class="label label-success">Open</span>
 		<span ng-show="game.state == 'playing'" class="label label-info">Playing</span>
+		<span ng-show="game.state == 'finished'" class="label label-danger">Finished</span>
 		<span ng-show="game.maxPlayers == game.players.length" class="label label-danger">Full</span>
 	</p>
 	<p><span class="label label-primary">
