@@ -82,15 +82,15 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
     .state('game', {
       url: "/game",
       templateUrl: "./views/game.html",
-      controller: gameController
+      controller: "GameController as gameController"
     })
     .state('game.gameboard', {
       url: "/gameboard",
-      templateUrl: "./views/gameboard.html"
+      templateUrl: "./views/directives/gameViews/gameboard.html"
     })
-    .state('game.gamePlayers', {
-      url: "/gamePlayers",
-      templateUrl: "./views/gamePlayers.html"
+    .state('game.players', {
+      url: "/players",
+      templateUrl: "./views/directives/gameViews/players.html"
     })
     .state('authcallback', {
       url: "/auth/authcallback",

@@ -1,5 +1,7 @@
-module.exports = function($scope, gamesFactory, gameService) {
+module.exports = function($scope, $state, gamesFactory, gameService) {
 	
+	this.activeTab = "gameboard";
+
 	var Game = require("./../models/game");
 	this.game = new Game(gamesFactory, gameService.getGame()._id);
 	this.game.getTiles();
@@ -25,8 +27,6 @@ module.exports = function($scope, gamesFactory, gameService) {
 	var tile1 = null;
 
 	this.selectTile = function(event, selectedTile) {
-
-		console.log(selectedTile);
 
 		// Als de tegel niet vrij is, dan doe niks
 		if (!this.game.checkTileFreedom(selectedTile)) {
@@ -74,7 +74,7 @@ module.exports = function($scope, gamesFactory, gameService) {
 	}
 
 	this.playerHasMatch = function(tile1, tile2) {
-		this.game.addMatch(tile1._id, tile2._id);
+		this.game.addMatch(tile1, tile2);
 	}
 
 	this.checkMatchesLeft = function() {
@@ -82,5 +82,38 @@ module.exports = function($scope, gamesFactory, gameService) {
 			alert("There are no more matches. The game is over.");
 		}
 	}
+
+	/*this.filterMatchedTiles = function(tile) {
+	    if (tile.match.foundBy == window.localStorage.getItem("email")) {
+	        return true;
+	    }
+	    return false;
+	}*/
+
+	this.tileNotMatched = function(tile) {
+	    if (!tile.hasOwnProperty('match')) {
+	        return true;
+	    }
+	    return false;
+	}
+
+	this.tileMatched = function(tile) {
+	    if (tile.hasOwnProperty('match')) {
+	        return true;
+	    }
+	    return false;
+	}
+
+	this.goToGameboard = function(){
+		this.activeTab = 'gameboard';
+		$state.go('game.gameboard');
+	}
+
+	this.goToPlayers = function(){
+		this.activeTab = 'players';
+		$state.go('game.players')
+	}
+	
+	$state.go('game.gameboard');
 
 }
