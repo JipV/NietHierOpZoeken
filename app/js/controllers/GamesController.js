@@ -42,7 +42,8 @@ module.exports = function($scope, $state, $timeout, gamesFactory, gameService, r
 				self.games.push(newGame);
 				$("#progressBarToRemove").remove()
 				swal({ title: "Game created!", text: "The game is added to 'My games'", type: "success", confirmButtonText: "Cool!", 
-					confirmButtonColor: self.confirmButtonColor }, function(){
+					confirmButtonColor: self.confirmButtonColor }, 
+					allowOutsideClick: true, function(){
 					self.creatingGame = false
 					self.goToOwnedGames();
 				});
@@ -88,7 +89,9 @@ module.exports = function($scope, $state, $timeout, gamesFactory, gameService, r
 		   }
 			swal.close();
 			window.setTimeout(function(){
-				swal({ title: game.createdBy.name + "'s game joined!", text: "You have successfully joined " +  game.createdBy.name + "'s game!'", type: "success", confirmButtonText: "Cool!", 
+				swal({ title: game.createdBy.name + "'s game joined!", allowOutsideClick: true,  text: "You have successfully joined " +  game.createdBy.name + "'s game!'", 
+					type: "success", 
+					confirmButtonText: "Cool!", 
 					confirmButtonColor: self.confirmButtonColor});
 			}, 400)
 		});
@@ -118,7 +121,8 @@ module.exports = function($scope, $state, $timeout, gamesFactory, gameService, r
 					showCancelButton: true,   
 					confirmButtonColor: self.confirmButtonColor,   
 					confirmButtonText: "Go to game!",   
-					cancelButtonText: "Cool!",   
+					cancelButtonText: "Cool!",  
+					allowOutsideClick: true,  
 					closeOnConfirm: true,   
 					closeOnCancel: true }, function(isConfirm){   
 						if (isConfirm) {     
