@@ -7,28 +7,6 @@
 	background-color: red;
 }
 
-.tile { 
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 72px;
-	height: 90px; 
-	-webkit-box-shadow: -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
-	box-shadow:         -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
-}
-
-.matchedTile { 
-	float: left;
-	left: 0px;
-	top: 0px;
-	width: 72px;
-	height: 90px; 
-	-webkit-box-shadow: -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
-	box-shadow:         -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
-}
-
 .isSelected {
     outline: none;
     border-color: blue;
@@ -109,8 +87,4 @@
 	font-family: Pacifico;
 	font-color: #CDCDCD;
 	font-size:20px;
-}
-
-@media only screen and (max-width : 852px) {
-	#progressBottomLabel { font-size: 13px; }
 }

@@ -42,10 +42,11 @@ module.exports = function($scope, $state, $timeout, gamesFactory, gameService, r
 				self.games.push(newGame);
 				$("#progressBarToRemove").remove()
 				swal({ title: "Game created!", text: "The game is added to 'My games'", type: "success", confirmButtonText: "Cool!", 
-					confirmButtonColor: self.confirmButtonColor }, 
+					confirmButtonColor: self.confirmButtonColor, 
 					allowOutsideClick: true, function(){
-					self.creatingGame = false
-					self.goToOwnedGames();
+						self.creatingGame = false
+						self.goToOwnedGames();
+					}
 				});
 			});
 		} else {
