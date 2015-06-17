@@ -5,7 +5,7 @@ require('angular-ui-router/build/angular-ui-router');
 var app = angular.module("Mahjong_Mayhem", ['ui.router']);
 
 //Auth
-var HttpInjector      = require('./factories/httpInjector');
+var HttpInjector = require('./factories/httpInjector');
 app.factory('HttpInjector', HttpInjector);
 
 //Factories
@@ -13,16 +13,12 @@ var urlFactory = require("./factories/urlFactory");
 var loginFactory = require("./factories/loginFactory");
 var gamesFactory = require("./factories/gamesFactory");
 
-var gameService = require("./services/gameService");
-
 var gamesController = require("./controllers/GamesController");
 var gameController = require("./controllers/GameController");
 
 app.factory("urlFactory", urlFactory);
 app.factory("gamesFactory", gamesFactory);
 app.factory("loginFactory", loginFactory);
-
-app.service("gameService", gameService);
 
 //Controllers
 var gamesController = require("./controllers/GamesController");
@@ -38,7 +34,7 @@ app.controller("UserController", userController);
 app.controller("callbackController", callbackController)
 
 //Models
-var game = require("./models/game");
+//var game = require("./models/game");
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
 
@@ -80,7 +76,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       templateUrl: "./views/directives/gamesViews/ownedgames.html",
     })
     .state('game', {
-      url: "/game",
+      url: "/game?id",
       templateUrl: "./views/game.html",
       controller: "GameController as gameController"
     })

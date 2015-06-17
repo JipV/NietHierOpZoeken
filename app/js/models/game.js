@@ -1,16 +1,25 @@
 module.exports = function(gamesFactory, idGame) {
 	this.gamesFactory = gamesFactory;
 	this.id = idGame;
+	this.players;
 	this.tiles;
 	this.freeTiles = [];
 	
 	var self = this
 	
-	this.getTiles = function() {
+	this.gamesFactory.getGame(this.id, function(game){
+		self.players = game.players;
+	});
+
+	this.gamesFactory.getTiles(this.id, function(tiles){
+		self.tiles = tiles;
+	});
+
+	/*this.getTiles = function() {
 		this.gamesFactory.getTiles(this.id, function(tiles){
 			self.tiles = tiles;
 		});
-    };
+    };*/
 
 	this.checkMove = function(tile, tile2) {
 		if (((tile.tile.matchesWholeSuit || tile2.tile.machtesWholeSuit) && tile.tile.suit == tile2.tile.suit) ||

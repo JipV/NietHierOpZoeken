@@ -1,4 +1,4 @@
-module.exports = function($scope, $state, $timeout, gamesFactory, gameService, retreivedGames) {
+module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames) {
 
 	this.user = {
 		_id: window.localStorage.getItem("email"),
@@ -18,8 +18,7 @@ module.exports = function($scope, $state, $timeout, gamesFactory, gameService, r
 	var stop;
 
 	this.showGame = function(game) {
-		gameService.setGame(game);
-		$state.go('game');
+		$state.go('game', {id: game._id});
 	}
 
 	this.hasPlayer = function(game, user){
