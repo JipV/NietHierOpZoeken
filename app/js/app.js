@@ -5,7 +5,7 @@ require('angular-ui-router/build/angular-ui-router');
 var app = angular.module("Mahjong_Mayhem", ['ui.router']);
 
 //Auth
-var HttpInjector      = require('./factories/httpInjector');
+var HttpInjector = require('./factories/httpInjector');
 app.factory('HttpInjector', HttpInjector);
 
 //Factories
@@ -13,16 +13,9 @@ var urlFactory = require("./factories/urlFactory");
 var loginFactory = require("./factories/loginFactory");
 var gamesFactory = require("./factories/gamesFactory");
 
-var gameService = require("./services/gameService");
-
-var gamesController = require("./controllers/GamesController");
-var gameController = require("./controllers/GameController");
-
 app.factory("urlFactory", urlFactory);
 app.factory("gamesFactory", gamesFactory);
 app.factory("loginFactory", loginFactory);
-
-app.service("gameService", gameService);
 
 //Controllers
 var gamesController = require("./controllers/GamesController");
@@ -37,8 +30,12 @@ app.controller("loginController", loginController);
 app.controller("UserController", userController);
 app.controller("callbackController", callbackController)
 
-//Models
-var game = require("./models/game");
+// Filters
+var tileNotMatchedFilter = require("./filters/tileNotMatchedFilter");
+var tileMatchedByPlayerFilter = require("./filters/tileMatchedByPlayerFilter");
+
+app.filter("tileNotMatched", tileNotMatchedFilter);
+app.filter("tileMatchedByPlayer", tileMatchedByPlayerFilter);
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
 
@@ -80,7 +77,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       templateUrl: "./views/directives/gamesViews/ownedgames.html",
     })
     .state('game', {
-      url: "/game",
+      url: "/game?id",
       templateUrl: "./views/game.html",
       controller: "GameController as gameController"
     })
@@ -106,7 +103,7 @@ app.config(['$httpProvider', function ($httpProvider)
 app.directive('tile', function() {
 	return {
 		restrict: 'E',
-		templateUrl: './views/directives/tileTemplate.html',
+		templateUrl: './views/directives/tile.html',
 		controller: function($scope) {
 		},
 		link: function(scope, element, attrs) {

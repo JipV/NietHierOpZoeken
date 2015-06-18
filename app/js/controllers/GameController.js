@@ -1,10 +1,10 @@
-module.exports = function($scope, $state, gamesFactory, gameService) {
+module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	
 	this.activeTab = "gameboard";
 
 	var Game = require("./../models/game");
-	this.game = new Game(gamesFactory, gameService.getGame()._id);
-	this.game.getTiles();
+	this.game = new Game(gamesFactory, $stateParams["id"]);
+	//this.game.getTiles();
 	
 
 	
@@ -83,33 +83,16 @@ module.exports = function($scope, $state, gamesFactory, gameService) {
 		}
 	}
 
-	/*this.filterMatchedTiles = function(tile) {
-	    if (tile.match.foundBy == window.localStorage.getItem("email")) {
-	        return true;
-	    }
-	    return false;
-	}*/
-
-	this.tileNotMatched = function(tile) {
-	    if (!tile.hasOwnProperty('match')) {
-	        return true;
-	    }
-	    return false;
+	this.goBackToGames = function() {
+		$state.go('home');
 	}
 
-	this.tileMatched = function(tile) {
-	    if (tile.hasOwnProperty('match')) {
-	        return true;
-	    }
-	    return false;
-	}
-
-	this.goToGameboard = function(){
+	this.goToGameboard = function() {
 		this.activeTab = 'gameboard';
 		$state.go('game.gameboard');
 	}
 
-	this.goToPlayers = function(){
+	this.goToPlayers = function() {
 		this.activeTab = 'players';
 		$state.go('game.players')
 	}

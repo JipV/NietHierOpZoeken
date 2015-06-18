@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\controllers\GameController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">js\controllers\GameController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">2.27% <small>(1 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">2.27% <small>(1 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">js/controllers/</a> &#187; GameController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = <span class="fstat-no" title="function not covered" >function($scope, $state, gamesFactory, $stateParams) {</span>
+	
+<span class="cstat-no" title="statement not covered" >	this.activeTab = "gameboard";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var Game = require("./../models/game");</span>
+<span class="cstat-no" title="statement not covered" >	this.game = new Game(gamesFactory, $stateParams["id"]);</span>
+	//this.game.getTiles();
+	
+&nbsp;
+	
+	/*var io = require("socket.io");
+	io("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
+	
+	io.sockets.on('connection', function(socket) {
+&nbsp;
+		// Er zijn twee tegels gematched
+		socket.on("match", function(roomId) {
+			console.log("Er zijn twee tegels gematched");
+		});
+		
+	});*/
+	
+	
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var eventTile1 = null;</span>
+<span class="cstat-no" title="statement not covered" >	var tile1 = null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.selectTile = <span class="fstat-no" title="function not covered" >function(event, selectedTile) {</span></span>
+&nbsp;
+		// Als de tegel niet vrij is, dan doe niks
+<span class="cstat-no" title="statement not covered" >		if (!this.game.checkTileFreedom(selectedTile)) {</span>
+<span class="cstat-no" title="statement not covered" >			return;</span>
+		}
+&nbsp;
+		// Voegt blauw gloed toe
+<span class="cstat-no" title="statement not covered" >		$(event.target).addClass('isSelected');</span>
+		
+<span class="cstat-no" title="statement not covered" >		if (tile1 == null) {</span>
+<span class="cstat-no" title="statement not covered" >			eventTile1 = event;</span>
+<span class="cstat-no" title="statement not covered" >			tile1 = selectedTile;</span>
+		} 
+		else {
+<span class="cstat-no" title="statement not covered" >			var targetTile1 = eventTile1.target;</span>
+<span class="cstat-no" title="statement not covered" >			var targetTile2 = event.target;</span>
+&nbsp;
+			// Haalt blauwe gloed weg
+<span class="cstat-no" title="statement not covered" >			$(targetTile1).removeClass('isSelected');</span>
+<span class="cstat-no" title="statement not covered" >			$(targetTile2).removeClass('isSelected');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			if (selectedTile != tile1) {</span>
+<span class="cstat-no" title="statement not covered" >				if (this.game.checkMove(tile1, selectedTile)) {</span>
+<span class="cstat-no" title="statement not covered" >					$(targetTile1).remove();</span>
+<span class="cstat-no" title="statement not covered" >					$(targetTile2).remove();</span>
+<span class="cstat-no" title="statement not covered" >					this.playerHasMatch(tile1, selectedTile);</span>
+<span class="cstat-no" title="statement not covered" >					this.checkMatchesLeft();</span>
+				}
+				else {					
+					// Voegt rode gloed toe
+<span class="cstat-no" title="statement not covered" >					$(targetTile1).addClass('noMatch');</span>
+<span class="cstat-no" title="statement not covered" >					$(targetTile2).addClass('noMatch');</span>
+&nbsp;
+					// Haalt rode gloed weg
+<span class="cstat-no" title="statement not covered" >					setTimeout(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >						$(targetTile1).removeClass('noMatch');</span>
+<span class="cstat-no" title="statement not covered" >						$(targetTile2).removeClass('noMatch');</span>
+					}, 800);
+				}
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			eventTile1 = null;</span>
+<span class="cstat-no" title="statement not covered" >			tile1 = null;</span>
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.playerHasMatch = <span class="fstat-no" title="function not covered" >function(tile1, tile2) {</span></span>
+<span class="cstat-no" title="statement not covered" >		this.game.addMatch(tile1, tile2);</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.checkMatchesLeft = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		if (!this.game.matchesLeft()) {</span>
+<span class="cstat-no" title="statement not covered" >			alert("There are no more matches. The game is over.");</span>
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.goBackToGames = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		$state.go('home');</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.goToGameboard = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		this.activeTab = 'gameboard';</span>
+<span class="cstat-no" title="statement not covered" >		$state.go('game.gameboard');</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.goToPlayers = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		this.activeTab = 'players';</span>
+<span class="cstat-no" title="statement not covered" >		$state.go('game.players')</span>
+	}
+	
+<span class="cstat-no" title="statement not covered" >	$state.go('game.gameboard');</span>
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 18 2015 16:03:20 GMT+0200 (West-Europa (zomertijd))</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
