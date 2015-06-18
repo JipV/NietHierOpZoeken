@@ -1,5 +1,7 @@
 <div>
 
+	<button ng-click="gameController.goBackToGames()" class="btn btn-danger">Go back to games</button>
+
 	<ul class="nav nav-pills">
 		<li role="presentation" class="{{gameController.activeTab == 'gameboard' ? 'active tabBarButton': 'tabBarButton'}}">
 			<a class="pacifico bigText" ng-click="gameController.goToGameboard()">Gameboard</a>

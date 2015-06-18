@@ -15,10 +15,10 @@
 <div class="header low">
     <h1>Code coverage report for <span class="entity">js\controllers\GameController.js</span></h1>
     <h2>
-        Statements: <span class="metric">2.38% <small>(1 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">2.27% <small>(1 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">0% <small>(0 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">0% <small>(0 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">2.38% <small>(1 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">2.27% <small>(1 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">js/controllers/</a> &#187; GameController.js</div>
@@ -126,26 +126,7 @@
 99
 100
 101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+102</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -230,27 +211,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -350,35 +312,16 @@
 		}
 	}
 &nbsp;
-	/*this.filterMatchedTiles = function(tile) {
-	    if (tile.match.foundBy == window.localStorage.getItem("email")) {
-	        return true;
-	    }
-	    return false;
-	}*/
+<span class="cstat-no" title="statement not covered" >	this.goBackToGames = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		$state.go('home');</span>
+	}
 &nbsp;
-	/*this.tileNotMatched = function(tile) {
-	    if (!tile.hasOwnProperty('match')) {
-	        return true;
-	    }
-	    return false;
-	}*/
-&nbsp;
-	/*this.tileMatchedByPlayer = function(player) {
-		return function (tile) {
-			if (tile.hasOwnProperty('match') &amp;&amp; tile.match.foundBy == player._id) {
-	        	return true;
-	    	}
-	    	return false;
-		}
-	}*/
-&nbsp;
-<span class="cstat-no" title="statement not covered" >	this.goToGameboard = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >	this.goToGameboard = <span class="fstat-no" title="function not covered" >function() {</span></span>
 <span class="cstat-no" title="statement not covered" >		this.activeTab = 'gameboard';</span>
 <span class="cstat-no" title="statement not covered" >		$state.go('game.gameboard');</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	this.goToPlayers = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >	this.goToPlayers = <span class="fstat-no" title="function not covered" >function() {</span></span>
 <span class="cstat-no" title="statement not covered" >		this.activeTab = 'players';</span>
 <span class="cstat-no" title="statement not covered" >		$state.go('game.players')</span>
 	}
@@ -390,7 +333,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 18 2015 15:49:14 GMT+0200 (West-Europa (zomertijd))</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 18 2015 16:03:20 GMT+0200 (West-Europa (zomertijd))</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

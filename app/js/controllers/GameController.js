@@ -83,35 +83,16 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 		}
 	}
 
-	/*this.filterMatchedTiles = function(tile) {
-	    if (tile.match.foundBy == window.localStorage.getItem("email")) {
-	        return true;
-	    }
-	    return false;
-	}*/
+	this.goBackToGames = function() {
+		$state.go('home');
+	}
 
-	/*this.tileNotMatched = function(tile) {
-	    if (!tile.hasOwnProperty('match')) {
-	        return true;
-	    }
-	    return false;
-	}*/
-
-	/*this.tileMatchedByPlayer = function(player) {
-		return function (tile) {
-			if (tile.hasOwnProperty('match') && tile.match.foundBy == player._id) {
-	        	return true;
-	    	}
-	    	return false;
-		}
-	}*/
-
-	this.goToGameboard = function(){
+	this.goToGameboard = function() {
 		this.activeTab = 'gameboard';
 		$state.go('game.gameboard');
 	}
 
-	this.goToPlayers = function(){
+	this.goToPlayers = function() {
 		this.activeTab = 'players';
 		$state.go('game.players')
 	}
