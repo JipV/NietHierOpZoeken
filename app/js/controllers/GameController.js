@@ -5,21 +5,34 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	var Game = require("./../models/game");
 	this.game = new Game(gamesFactory, $stateParams["id"]);
 	//this.game.getTiles();
-	
+	//gamesFactory.testSockets($stateParams["id"]);
 
 	
 	/*var io = require("socket.io");
-	io("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
+	var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
 	
-	io.sockets.on('connection', function(socket) {
+	socket.on('connection', function(socket) {
 
 		// Er zijn twee tegels gematched
-		socket.on("match", function(roomId) {
+		socket.on("match", function() {
 			console.log("Er zijn twee tegels gematched");
 		});
 		
 	});*/
+
+	/*var socket = io("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
+	 
+	socket.on('connection', function (socket) {
+	    socket.on("match", function() {
+			console.log("Er zijn twee tegels gematched");
+
+		});
+	});*/
 	
+	var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
+	socket.on("match", function(matchedTiles) {
+		console.log(matchedTiles);
+	});
 	
 
 
