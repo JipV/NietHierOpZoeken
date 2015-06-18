@@ -58,8 +58,7 @@ module.exports = function($http, urlFactory) {
 
     gamesFactory.getTiles = function (id, callBack) {
         return $http.get(urlFactory + urlBase + '/' + id + '/Tiles').
-		success(function(data, status, headers, config) {
-            
+		success(function(data, status, headers, config) { 
 			callBack(data);
 		}).
 		error(function(data, status, headers, config){
@@ -67,7 +66,7 @@ module.exports = function($http, urlFactory) {
 		});
     };
 
-    gamesFactory.getMatchedTiles = function (id, callBack) {
+    /*gamesFactory.getMatchedTiles = function (id, callBack) {
         return $http.get(urlFactory + urlBase + '/' + id + '/Tiles/?matched=true').
         success(function(data, status, headers, config) {
             callBack(data);
@@ -75,7 +74,7 @@ module.exports = function($http, urlFactory) {
         error(function(data, status, headers, config){
             console.log(data);
         });
-    };
+    };*/
 
     gamesFactory.addMatch = function (idGame, idTile1, idTile2, callBack) {
         return $http.post(urlFactory + urlBase + '/' + idGame + '/Tiles/matches', {tile1Id: idTile1, tile2Id: idTile2}).
@@ -85,6 +84,15 @@ module.exports = function($http, urlFactory) {
 		error(function(data, status, headers, config){
 			console.log(data);
 		});
+    };
+
+    gamesFactory.testSockets = function (idGame) {
+        return $http.get("https://mahjongmayhem.herokuapp.com/test/" + idGame + "/match").
+        success(function(data, status, headers, config) {
+        }).
+        error(function(data, status, headers, config){
+            console.log(data);
+        });
     };
 	
     return gamesFactory;
