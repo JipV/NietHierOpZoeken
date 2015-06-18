@@ -11,7 +11,8 @@ module.exports = function (config) {
             'app/**/*.js',
             // Angular-mocks moet na app.js geladen worden omdat daar angular in zit
             'node_modules/angular-mocks/angular-mocks.js',
-            'test/*.spec.js'
+            'test/*.spec.js',
+            'app/**/*.html'
         ],
  
         reporters: ['progress', 'coverage'],
@@ -20,7 +21,13 @@ module.exports = function (config) {
           // source files, that you wanna generate coverage for
           // do not include tests or libraries
           // (these files will be instrumented by Istanbul)
-          'app/**/*.js': ['coverage', 'browserify']
+          'app/**/*.js': ['coverage', 'browserify'],
+          'app/**/*.html': ['ng-html2js']
+        },
+
+        ngHtml2JsPreprocessor: {
+          // strip this from the file path
+          stripPrefix: 'app/'
         },
 
         browserify: {
