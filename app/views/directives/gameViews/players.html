@@ -1,15 +1,11 @@
-<!--<div id="matchedTiles" ng-repeat="tile in gameController.game.tiles | filter: gameController.tileMatched | orderBy: 'match.foundOn'">
-	<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
-</div>-->
+<div>
+	<div ng-repeat="player in gameController.game.players">
+		
+		<h3>{{ player.name}}</h3>
 
+		<div id="matchedTiles" ng-repeat="tile in gameController.game.tiles | tileMatchedByPlayer:player | orderBy: 'match.foundOn'">
+		<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
+		</div>
 
-
-<div ng-repeat="player in gameController.game.players">
-	
-	<h3>{{ player.name}}</h3>
-
-	<div id="matchedTiles" ng-repeat="tile in gameController.game.tiles | filter: gameController.tileMatchedByPlayer(player) | orderBy: 'match.foundOn'">
-	<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
 	</div>
-
 </div>

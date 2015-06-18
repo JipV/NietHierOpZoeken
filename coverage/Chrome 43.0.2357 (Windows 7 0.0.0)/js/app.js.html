@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\app.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">js\app.js</span></h1>
+    <h2>
+        Statements: <span class="metric">74.47% <small>(35 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">18.18% <small>(2 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">74.47% <small>(35 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">js/</a> &#187; app.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">require('angular/angular');
+require('angular-ui-router/build/angular-ui-router');
+&nbsp;
+// Create your app
+var app = angular.module("Mahjong_Mayhem", ['ui.router']);
+&nbsp;
+//Auth
+var HttpInjector = require('./factories/httpInjector');
+app.factory('HttpInjector', HttpInjector);
+&nbsp;
+//Factories
+var urlFactory = require("./factories/urlFactory");
+var loginFactory = require("./factories/loginFactory");
+var gamesFactory = require("./factories/gamesFactory");
+&nbsp;
+app.factory("urlFactory", urlFactory);
+app.factory("gamesFactory", gamesFactory);
+app.factory("loginFactory", loginFactory);
+&nbsp;
+//Controllers
+var gamesController = require("./controllers/GamesController");
+var gameController = require("./controllers/GameController");
+var loginController = require("./controllers/LoginController");
+var userController = require("./controllers/UserController");
+var callbackController = require("./controllers/CallbackController");
+&nbsp;
+app.controller("GamesController", gamesController);
+app.controller("GameController", gameController);
+app.controller("loginController", loginController);
+app.controller("UserController", userController);
+app.controller("callbackController", callbackController)
+&nbsp;
+// Filters
+var tileNotMatchedFilter = require("./filters/tileNotMatchedFilter");
+var tileMatchedByPlayerFilter = require("./filters/tileMatchedByPlayerFilter");
+&nbsp;
+app.filter("tileNotMatched", tileNotMatchedFilter);
+app.filter("tileMatchedByPlayer", tileMatchedByPlayerFilter);
+&nbsp;
+app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
+&nbsp;
+  $urlRouterProvider.otherwise("/");
+&nbsp;
+  $stateProvider
+    .state('login', {
+      url: "/",
+      controller: loginController,
+      templateUrl:"./views/login.html"
+    })
+    .state('home', {
+      url: "/games",
+      templateUrl: "./views/games.html",
+      controller: "GamesController as gamesController",
+      resolve: {
+        retreivedGames: <span class="fstat-no" title="function not covered" >function(gamesFactory, $q){</span>
+<span class="cstat-no" title="statement not covered" >          setProgressBar("Loading games", 30);</span>
+<span class="cstat-no" title="statement not covered" >          var deferred = $q.defer();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          gamesFactory.getGames(100, setProgressBar, <span class="fstat-no" title="function not covered" >function(games){</span></span>
+<span class="cstat-no" title="statement not covered" >            setProgressBar("Loading games", 100);</span>
+<span class="cstat-no" title="statement not covered" >            deferred.resolve(games);</span>
+          })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          return deferred.promise;</span>
+        }
+      }
+    })
+    .state('home.opengames', {
+      templateUrl: "./views/directives/gamesViews/opengames.html",
+    })
+    .state('home.playinggames', {
+      url: "/playing",
+      templateUrl: "./views/directives/gamesViews/playinggames.html"
+    })
+    .state('home.ownedgames', {
+      url: "/owned",
+      templateUrl: "./views/directives/gamesViews/ownedgames.html",
+    })
+    .state('game', {
+      url: "/game?id",
+      templateUrl: "./views/game.html",
+      controller: "GameController as gameController"
+    })
+    .state('game.gameboard', {
+      url: "/gameboard",
+      templateUrl: "./views/directives/gameViews/gameboard.html"
+    })
+    .state('game.players', {
+      url: "/players",
+      templateUrl: "./views/directives/gameViews/players.html"
+    })
+    .state('authcallback', {
+      url: "/auth/authcallback",
+      controller: callbackController
+    });
+});
+&nbsp;
+app.config(['$httpProvider', function ($httpProvider)
+{
+  $httpProvider.interceptors.push('HttpInjector');
+}]);
+&nbsp;
+app.directive('tile', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >	return {</span>
+		restrict: 'E',
+		templateUrl: './views/directives/tile.html',
+		controller: <span class="fstat-no" title="function not covered" >function($scope) {</span>
+		},
+		link: <span class="fstat-no" title="function not covered" >function(scope, element, attrs) {</span>
+		}
+	}
+});
+&nbsp;
+app.directive('game', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    restrict: 'E',
+    templateUrl: './views/directives/gamesViews/game.html',
+  }
+});
+&nbsp;
+app.directive('creategame', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    restrict: 'E',
+    templateUrl: './views/directives/gamesViews/creategame.html',
+  }
+});
+&nbsp;
+app.directive('user', <span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    restrict: 'E',
+    templateUrl:'./views/directives/user.html',
+    controller: "UserController as uc"
+  }
+});
+&nbsp;
+<span class="fstat-no" title="function not covered" >function setProgressBar(task, number){</span>
+<span class="cstat-no" title="statement not covered" >  $("#loadingTask").html(task)</span>
+<span class="cstat-no" title="statement not covered" >  $('.progress-bar').css('width', number+'%').attr('aria-valuenow', number);</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 18 2015 15:49:14 GMT+0200 (West-Europa (zomertijd))</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

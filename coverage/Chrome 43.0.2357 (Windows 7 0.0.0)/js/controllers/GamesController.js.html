@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js\controllers\GamesController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">js\controllers\GamesController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">1.1% <small>(1 / 91)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 25)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">1.1% <small>(1 / 91)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">js/controllers/</a> &#187; GamesController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = <span class="fstat-no" title="function not covered" >function($scope, $state, $timeout, gamesFactory, retreivedGames) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.user = {</span>
+		_id: window.localStorage.getItem("email"),
+		id: window.localStorage.getItem("email")
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.activeTab = "open"</span>
+<span class="cstat-no" title="statement not covered" >	this.confirmButtonColor = "#337ab7"</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.gameType = "Shanghai";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.games = retreivedGames;</span>
+<span class="cstat-no" title="statement not covered" >	this.creatingGame = false</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var progressBarToAdd = '&lt;div id="progressBarToRemove" class="progress"&gt;&lt;div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"&gt;&lt;/div&gt;&lt;/div&gt;'</span>
+<span class="cstat-no" title="statement not covered" >	var self = this;</span>
+<span class="cstat-no" title="statement not covered" >	var stop;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.showGame = <span class="fstat-no" title="function not covered" >function(game) {</span></span>
+<span class="cstat-no" title="statement not covered" >		$state.go('game', {id: game._id});</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.hasPlayer = <span class="fstat-no" title="function not covered" >function(game, user){</span></span>
+<span class="cstat-no" title="statement not covered" >		for(var x = 0; x &lt; game.players.length; x++){</span>
+<span class="cstat-no" title="statement not covered" >			if(game.players[x]._id === user._id){</span>
+<span class="cstat-no" title="statement not covered" >				return true</span>
+			}
+		}
+<span class="cstat-no" title="statement not covered" >		return false</span>
+	}	
+	
+<span class="cstat-no" title="statement not covered" >	this.createGame = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		var minPlayers = $("#minPlayers").val();</span>
+<span class="cstat-no" title="statement not covered" >		var maxPlayers = $("#maxPlayers").val();</span>
+<span class="cstat-no" title="statement not covered" >		if(minPlayers != "" &amp;&amp; maxPlayers != "" &amp;&amp; minPlayers &gt; 0 &amp;&amp; minPlayers &lt; 33 &amp;&amp; maxPlayers &gt; 0 &amp;&amp; maxPlayers &lt; 33 &amp;&amp; maxPlayers &gt; minPlayers){</span>
+			//Implementeer success (Alle gegevens zijn goed )
+<span class="cstat-no" title="statement not covered" >			$("#addProgressBarHere").append(progressBarToAdd)</span>
+<span class="cstat-no" title="statement not covered" >			this.creatingGame = true</span>
+<span class="cstat-no" title="statement not covered" >			gamesFactory.createGame(this.gameType, minPlayers, maxPlayers, <span class="fstat-no" title="function not covered" >function(newGame){</span></span>
+<span class="cstat-no" title="statement not covered" >				self.games.push(newGame);</span>
+<span class="cstat-no" title="statement not covered" >				$("#progressBarToRemove").remove()</span>
+<span class="cstat-no" title="statement not covered" >				swal({ title: "Game created!", text: "The game is added to 'My games'", type: "success", confirmButtonText: "Cool!", </span>
+					confirmButtonColor: self.confirmButtonColor, 
+					allowOutsideClick: true, function<span class="fstat-no" title="function not covered" >(){</span>
+<span class="cstat-no" title="statement not covered" >						self.creatingGame = false</span>
+<span class="cstat-no" title="statement not covered" >						self.goToOwnedGames();</span>
+					}
+				});
+			});
+		} else {
+<span class="cstat-no" title="statement not covered" >			$("#alertToRemove").remove()</span>
+<span class="cstat-no" title="statement not covered" >			$("#createGame").append('&lt;div id="alertToRemove" class="alert alert-danger myAlert" role="alert"&gt;De game voldoet niet aan een van deze eisen: &lt;/br&gt; minPlayers != undefined &amp;&amp; maxPlayers != undefined &amp;&amp; minPlayers &gt; 1 &amp;&amp; minPlayers &lt; 32 &amp;&amp; maxPlayers &gt; 0 &amp;&amp; maxPlayers &lt; 33 &amp;&amp; maxPlayers &gt; minPlayers&lt;/div&gt;')</span>
+<span class="cstat-no" title="statement not covered" >			$(".myAlert").dequeue();</span>
+<span class="cstat-no" title="statement not covered" >			$(".myAlert").css("opacity", 0);</span>
+<span class="cstat-no" title="statement not covered" >			$(".myAlert").clearQueue();</span>
+<span class="cstat-no" title="statement not covered" >			$(".myAlert").stop(true, true);</span>
+<span class="cstat-no" title="statement not covered" >			if(angular.isDefined(stop)){</span>
+<span class="cstat-no" title="statement not covered" >				$timeout.cancel(stop);</span>
+<span class="cstat-no" title="statement not covered" >            	stop = undefined;</span>
+			}
+<span class="cstat-no" title="statement not covered" >			$(".myAlert").animate({</span>
+			    opacity: 1,
+			}, 1000, <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >			    stop = $timeout(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >					$( ".myAlert" ).animate({</span>
+						opacity: 0,
+					}, 4000, <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >						$("#alertToRemove").remove()</span>
+					});
+				}, 4000);
+			});
+		}
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.joinGame = <span class="fstat-no" title="function not covered" >function(game) {</span></span>
+<span class="cstat-no" title="statement not covered" >		swal({   </span>
+			title: "Joining game!",   
+			text: progressBarToAdd,   
+			html: true,
+			showConfirmButton: false });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		gamesFactory.joinGame(game._id, <span class="fstat-no" title="function not covered" >function(data){</span></span>
+<span class="cstat-no" title="statement not covered" >			for (var i in self.games) {</span>
+<span class="cstat-no" title="statement not covered" >		     if (self.games[i]._id == data._id) {</span>
+<span class="cstat-no" title="statement not covered" >		        self.games[i] = data;</span>
+<span class="cstat-no" title="statement not covered" >		        break;</span>
+		     }
+		   }
+<span class="cstat-no" title="statement not covered" >			swal.close();</span>
+<span class="cstat-no" title="statement not covered" >			window.setTimeout(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >				swal({ title: game.createdBy.name + "'s game joined!", allowOutsideClick: true,  text: "You have successfully joined " +  game.createdBy.name + "'s game!'", </span>
+					type: "success", 
+					confirmButtonText: "Cool!", 
+					confirmButtonColor: self.confirmButtonColor});
+			}, 400)
+		});
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.startGame = <span class="fstat-no" title="function not covered" >function(game) {</span></span>
+		
+<span class="cstat-no" title="statement not covered" >		swal({   </span>
+			title: "Starting game!",   
+			text: progressBarToAdd,   
+			html: true,
+			showConfirmButton: false });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		gamesFactory.startGame(game._id, <span class="fstat-no" title="function not covered" >function(data){</span></span>
+<span class="cstat-no" title="statement not covered" >			for (var i in self.games) {</span>
+<span class="cstat-no" title="statement not covered" >		     	if (self.games[i]._id == game._id) {</span>
+<span class="cstat-no" title="statement not covered" >		        	self.games[i].state = "playing";</span>
+<span class="cstat-no" title="statement not covered" >		        	break;</span>
+		     	}
+		   	}
+<span class="cstat-no" title="statement not covered" >			swal.close();</span>
+<span class="cstat-no" title="statement not covered" >			window.setTimeout(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >				swal({   </span>
+					title: "Game started!",   
+					text: "You have successfully started your game!",   
+					type: "success",   
+					showCancelButton: true,   
+					confirmButtonColor: self.confirmButtonColor,   
+					confirmButtonText: "Go to game!",   
+					cancelButtonText: "Cool!",  
+					allowOutsideClick: true,  
+					closeOnConfirm: true,   
+					closeOnCancel: true }, <span class="fstat-no" title="function not covered" >function(isConfirm){   </span>
+<span class="cstat-no" title="statement not covered" >						if (isConfirm) {     </span>
+<span class="cstat-no" title="statement not covered" >							for (var i in self.games) {</span>
+<span class="cstat-no" title="statement not covered" >						     	if (self.games[i]._id == game._id) {</span>
+<span class="cstat-no" title="statement not covered" >						        	self.showGame(self.games[i])</span>
+<span class="cstat-no" title="statement not covered" >						        	break;</span>
+						     	}
+						   	} 
+						}
+					});
+			}, 400)
+		});
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.isOwnedGame = <span class="fstat-no" title="function not covered" >function(game){</span></span>
+<span class="cstat-no" title="statement not covered" >		if(this.user._id == game.createdBy._id){</span>
+<span class="cstat-no" title="statement not covered" >			return true;</span>
+		} else {
+<span class="cstat-no" title="statement not covered" >			var found = false;</span>
+<span class="cstat-no" title="statement not covered" >			for(var i = 0; i &lt; game.players.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >			    if (game.players[i]._id == this.user._id) {</span>
+<span class="cstat-no" title="statement not covered" >			        found = true;</span>
+<span class="cstat-no" title="statement not covered" >			        break;</span>
+			    }
+			}
+<span class="cstat-no" title="statement not covered" >			return found;</span>
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.isSelfCreatedGame = <span class="fstat-no" title="function not covered" >function(game){</span></span>
+<span class="cstat-no" title="statement not covered" >		return this.user._id == game.createdBy._id;</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.goToOwnedGames = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >		this.activeTab = 'owned'</span>
+<span class="cstat-no" title="statement not covered" >		$state.go('home.ownedgames');</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.goToOpenGames = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >		this.activeTab = 'open'</span>
+<span class="cstat-no" title="statement not covered" >		$state.go('home.opengames');</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.goToPlayingGames = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >		this.activeTab = 'playing'</span>
+<span class="cstat-no" title="statement not covered" >		$state.go('home.playinggames')</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.changeSelect = <span class="fstat-no" title="function not covered" >function(gameType){</span></span>
+<span class="cstat-no" title="statement not covered" >		this.gameType = gameType;</span>
+<span class="cstat-no" title="statement not covered" >		$("#selectGameType").html(this.gameType);</span>
+	}
+	
+<span class="cstat-no" title="statement not covered" >	$state.go('home.opengames');</span>
+}</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 18 2015 15:49:14 GMT+0200 (West-Europa (zomertijd))</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

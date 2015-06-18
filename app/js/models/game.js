@@ -13,6 +13,11 @@ module.exports = function(gamesFactory, idGame) {
 
 	this.gamesFactory.getTiles(this.id, function(tiles){
 		self.tiles = tiles;
+
+
+	for (var i = 0; i < self.tiles.length; i++) {
+		console.log(self.tiles[i]);
+	}
 	});
 
 	/*this.getTiles = function() {

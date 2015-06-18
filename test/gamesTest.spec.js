@@ -146,7 +146,7 @@ describe("GamesController", function() {
 		gamesController = $controller('GamesController', { $scope: scope, gamesFactory: gamesFactory });
 	}));
 
-	it('should mock the httpbackend', function(){
+	/*it('should mock the httpbackend', function(){
 		
 		require('../app/js/models/game.js');
 		// Given
@@ -155,5 +155,5 @@ describe("GamesController", function() {
 		
 		expect(game.matchesLeft()).to.equal(true);
 		
-	});
+	});*/
 });

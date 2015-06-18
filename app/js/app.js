@@ -13,9 +13,6 @@ var urlFactory = require("./factories/urlFactory");
 var loginFactory = require("./factories/loginFactory");
 var gamesFactory = require("./factories/gamesFactory");
 
-var gamesController = require("./controllers/GamesController");
-var gameController = require("./controllers/GameController");
-
 app.factory("urlFactory", urlFactory);
 app.factory("gamesFactory", gamesFactory);
 app.factory("loginFactory", loginFactory);
@@ -33,8 +30,12 @@ app.controller("loginController", loginController);
 app.controller("UserController", userController);
 app.controller("callbackController", callbackController)
 
-//Models
-//var game = require("./models/game");
+// Filters
+var tileNotMatchedFilter = require("./filters/tileNotMatchedFilter");
+var tileMatchedByPlayerFilter = require("./filters/tileMatchedByPlayerFilter");
+
+app.filter("tileNotMatched", tileNotMatchedFilter);
+app.filter("tileMatchedByPlayer", tileMatchedByPlayerFilter);
 
 app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
 
@@ -102,7 +103,7 @@ app.config(['$httpProvider', function ($httpProvider)
 app.directive('tile', function() {
 	return {
 		restrict: 'E',
-		templateUrl: './views/directives/tileTemplate.html',
+		templateUrl: './views/directives/tile.html',
 		controller: function($scope) {
 		},
 		link: function(scope, element, attrs) {

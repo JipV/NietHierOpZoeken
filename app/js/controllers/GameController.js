@@ -90,21 +90,21 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	    return false;
 	}*/
 
-	this.tileNotMatched = function(tile) {
+	/*this.tileNotMatched = function(tile) {
 	    if (!tile.hasOwnProperty('match')) {
 	        return true;
 	    }
 	    return false;
-	}
+	}*/
 
-	this.tileMatchedByPlayer = function(player) {
+	/*this.tileMatchedByPlayer = function(player) {
 		return function (tile) {
 			if (tile.hasOwnProperty('match') && tile.match.foundBy == player._id) {
 	        	return true;
 	    	}
 	    	return false;
 		}
-	}
+	}*/
 
 	this.goToGameboard = function(){
 		this.activeTab = 'gameboard';
