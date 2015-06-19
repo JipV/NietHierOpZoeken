@@ -4,6 +4,7 @@ module.exports = function(gamesFactory, idGame) {
 	this.players;
 	this.tiles;
 	this.freeTiles = [];
+	this.processing = false;
 	
 	var self = this
 	
@@ -85,11 +86,9 @@ module.exports = function(gamesFactory, idGame) {
 	}
 
 	this.addMatch = function(tile1, tile2){
-		console.log("HALLOOOO2 ");
-		console.log(tile1);
-		console.log(tile2);
+		self.processing = true;
 		self.gamesFactory.addMatch(self.id, tile1._id, tile2._id, function(matchedTiles){
-			/*var matchedTile1 = matchedTiles[0];
+			var matchedTile1 = matchedTiles[0];
 			var matchedTile2 = matchedTiles[1];
 
 			if (matchedTile1.tile == tile1.tile._id && matchedTile2.tile == tile2.tile._id) {
@@ -99,7 +98,7 @@ module.exports = function(gamesFactory, idGame) {
 			else {
 				tile1.match = matchedTile2.match;
 				tile2.match = matchedTile1.match;
-			}*/
+			}
 		});
 	}
 
@@ -118,6 +117,7 @@ module.exports = function(gamesFactory, idGame) {
 				self.tiles[i].match = matchedTile2.match;
 			}
 		}
+		self.processing = false;
 	}
 	
 	this.matchesLeft = function(){

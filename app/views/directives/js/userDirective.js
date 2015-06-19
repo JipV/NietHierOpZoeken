@@ -8,11 +8,10 @@ module.exports = function(){
 			user: '=?',
 			onSelect: '=?'
 		},
-		controller: function($scope){
+		controller: function($scope, $state){
 			var self = this;
 
 			$scope.user = window.localStorage.getItem("email");
-			console.log('THe user is; ' + $scope.user);
 			$scope.isLoggedIn = function(){
 				if($scope.user){
 					return true;
@@ -20,6 +19,11 @@ module.exports = function(){
 					return false
 				}
 			}
+			$scope.logOut = function(){
+				window.localStorage.removeItem("email") 
+				$state.go('login');
+			}
+
 		},
 		
 		// PersonDirective.js

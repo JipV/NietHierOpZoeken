@@ -2,7 +2,6 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	
 	var self = this;
 	this.activeTab = "gameboard";
-
 	var Game = require("./../models/game");
 	this.game = new Game(gamesFactory, $stateParams["id"]);
 	//this.game.getTiles();
@@ -64,7 +63,6 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 			if (selectedTile != tile1) {
 				if (this.game.checkMove(tile1, selectedTile)) {
 					//this.playerHasMatch(tile1, selectedTile);
-
 					this.game.addMatch(tile1, selectedTile);
 
 					this.checkMatchesLeft();

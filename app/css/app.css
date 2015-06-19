@@ -105,3 +105,10 @@
 	font-color: #CDCDCD;
 	font-size:20px;
 }
+
+.activityIndicator {
+	position: absolute;
+	right:10px;
+	width:300px;
+	top:10px;
+}
