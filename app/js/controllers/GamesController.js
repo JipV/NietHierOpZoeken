@@ -223,7 +223,12 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 
 	this.goToPlayingGames = function(){
 		this.activeTab = 'playing'
-		$state.go('home.playinggames')
+		$state.go('home.playinggames');
+	}
+
+	this.goToMyPlayingGames = function(){
+		this.activeTab = 'myplaying'
+		$state.go('home.myplayinggames')
 	}
 
 	this.changeSelect = function(gameType){
