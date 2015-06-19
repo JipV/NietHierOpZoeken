@@ -25,6 +25,8 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 			title: "Game finished!",  
 			text: text,  
 			showConfirmButton: true
+		}, function() {
+			self.goToPlayers();
 		});
 	});
 	
@@ -54,6 +56,8 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 
 			if (selectedTile != tile1) {
 				if (this.game.checkMove(tile1, selectedTile)) {
+					$(targetTile1).remove();
+					$(targetTile2).remove();
 					this.game.addMatch(tile1, selectedTile);
 				}
 				else {					
@@ -72,6 +76,10 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 			eventTile1 = null;
 			tile1 = null;
 		}
+	}
+
+	if (!this.game.checkPlayerInGame(window.localStorage.getItem("email"))) {
+		this.selectTile = function(event, selectedTile) {};
 	}
 
 	this.goBackToGames = function() {

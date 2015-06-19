@@ -68,6 +68,10 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
       url: "/playing",
       templateUrl: "./views/directives/gamesViews/playinggames.html"
     })
+    .state('home.myplayinggames', {
+      url: "/myplaying",
+      templateUrl: "./views/directives/gamesViews/myplayinggames.html"
+    })
     .state('home.ownedgames', {
       url: "/owned",
       templateUrl: "./views/directives/gamesViews/ownedgames.html",

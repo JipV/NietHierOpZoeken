@@ -7,11 +7,14 @@
 				<li role="presentation" class="{{gamesController.activeTab == 'open' ? 'active tabBarButton': 'tabBarButton'}}">
 				  <a class="pacifico bigText" ng-click="gamesController.goToOpenGames()">Open</a>
 				</li>
+				<li role="presentation" class="{{gamesController.activeTab == 'playing' ? 'active tabBarButton': 'tabBarButton'}}">
+				  <a class="pacifico bigText" ng-click="gamesController.goToPlayingGames()">Playing</a>
+				</li>
 				<li role="presentation" class="{{gamesController.activeTab == 'owned' ? 'active tabBarButton': 'tabBarButton'}}">
 				  <a class="pacifico bigText" id="myGames" ng-click="gamesController.goToOwnedGames()">My games</a>
 				</li>
-				<li role="presentation" class="{{gamesController.activeTab == 'playing' ? 'active tabBarButton': 'tabBarButton'}}">
-				  <a class="pacifico bigText" ng-click="gamesController.goToPlayingGames()">My playing</a>
+				<li role="presentation" class="{{gamesController.activeTab == 'myplaying' ? 'active tabBarButton': 'tabBarButton'}}">
+				  <a class="pacifico bigText" ng-click="gamesController.goToMyPlayingGames()">My playing</a>
 				</li>
 			</ul>
 			<ul class="list-group">
