@@ -36,21 +36,21 @@ module.exports = function(gamesFactory, idGame) {
 		var leftFree = this.checkTileSide(tile, 'left');
 		var rightFree = this.checkTileSide(tile, 'right');
 		var topFree = true;
-		console.log("leftFree: " + leftFree);
-		console.log("rightFree: " + rightFree);
+		//console.log("leftFree: " + leftFree);
+		//console.log("rightFree: " + rightFree);
 		for (var x = tile.xPos -1; x <= tile.xPos +1; x++) {
 			for (var y = tile.yPos -1; y <= tile.yPos +1; y++) {
 				for(var i = 0; i < this.tiles.length; i++){
 					if(this.tiles[i].xPos == x && this.tiles[i].yPos == y && 
 					   this.tiles[i].zPos == tile.zPos + 1 && !this.isMatched(this.tiles[i])){
-					   	console.log(this.tiles[i]);
-					   	console.log(tile);
+					   	//console.log(this.tiles[i]);
+					   	//console.log(tile);
 						topFree = false;
 					}
 				}
 			}
 		}
-		console.log("topFree: " + topFree);
+		//console.log("topFree: " + topFree);
 		return (leftFree || rightFree) && topFree ? true : false
 	}
 
@@ -67,7 +67,7 @@ module.exports = function(gamesFactory, idGame) {
 		var yCoord3 = tile.yPos + 1;
 		for(var x = 0; x < this.tiles.length; x++){
 			if(this.tiles[x].xPos == xCoord){
-				if(this.isMatched(this.tiles[x])){
+				if(!this.isMatched(this.tiles[x])){
 					switch(this.tiles[x].yPos){
 					case(yCoord1):
 					case(yCoord2):
@@ -108,8 +108,7 @@ module.exports = function(gamesFactory, idGame) {
 		for (var i = 0; i < self.tiles.length; i++) {
 			if (self.tiles[i].tile._id == matchedTile1.tile) {
 				self.tiles[i].match = matchedTile1.match;
-			}
-			if (self.tiles[i].tile._id == matchedTile2.tile) {
+			} else if (self.tiles[i].tile._id == matchedTile2.tile) {
 				self.tiles[i].match = matchedTile2.match;
 			}
 		}
