@@ -158,9 +158,9 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 	}
 
 	this.joinSockets = function(){
-		self.games.forEach(function(game){
-			self.joinSocket(game);
-		});
+		for(var x = 0; x < self.games.length; x++){
+			self.joinSocket(self.games[x]);
+		}
 	}
 
 	this.joinSocket = function(game){
