@@ -1,5 +1,7 @@
 module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames) {
 
+	this.sockets = [];
+
 	this.user = {
 		_id: window.localStorage.getItem("email"),
 		id: window.localStorage.getItem("email")
