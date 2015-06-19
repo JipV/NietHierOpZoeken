@@ -85,6 +85,9 @@ module.exports = function(gamesFactory, idGame) {
 	}
 
 	this.addMatch = function(tile1, tile2){
+		console.log("HALLOOOO2 ");
+		console.log(tile1);
+		console.log(tile2);
 		self.gamesFactory.addMatch(self.id, tile1._id, tile2._id, function(matchedTiles){
 			/*var matchedTile1 = matchedTiles[0];
 			var matchedTile2 = matchedTiles[1];
