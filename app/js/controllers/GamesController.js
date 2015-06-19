@@ -36,16 +36,17 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 		if(minPlayers != "" && maxPlayers != "" && minPlayers > 0 && minPlayers < 33 && maxPlayers > 0 && maxPlayers < 33 && maxPlayers > minPlayers){
 			//Implementeer success (Alle gegevens zijn goed )
 			$("#addProgressBarHere").append(progressBarToAdd)
-			this.creatingGame = true
+			self.creatingGame = true
+			console.log("HALLOOOO");
 			gamesFactory.createGame(this.gameType, minPlayers, maxPlayers, function(newGame){
 				self.games.push(newGame);
 				$("#progressBarToRemove").remove()
 				swal({ title: "Game created!", text: "The game is added to 'My games'", type: "success", confirmButtonText: "Cool!", 
-					confirmButtonColor: self.confirmButtonColor, 
-					allowOutsideClick: true, function(){
+					confirmButtonColor: self.confirmButtonColor
+				}, function(){
+						console.log("HALLOOOO2");
 						self.creatingGame = false
 						self.goToOwnedGames();
-					}
 				});
 			});
 		} else {
