@@ -4,36 +4,14 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	this.activeTab = "gameboard";
 	var Game = require("./../models/game");
 	this.game = new Game(gamesFactory, $stateParams["id"]);
-	//this.game.getTiles();
-	//gamesFactory.testSockets($stateParams["id"]);
 
-	
-	/*var io = require("socket.io");
 	var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
 	
-	socket.on('connection', function(socket) {
-
-		// Er zijn twee tegels gematched
-		socket.on("match", function() {
-			console.log("Er zijn twee tegels gematched");
-		});
-		
-	});*/
-
-	/*var socket = io("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
-	 
-	socket.on('connection', function (socket) {
-	    socket.on("match", function() {
-			console.log("Er zijn twee tegels gematched");
-
-		});
-	});*/
-	
-	var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
 	socket.on("match", function(matchedTiles) {
 		self.game.setTilesMatched(matchedTiles);
 		$scope.$apply();
 	});
+
 	socket.on("end", function(matchedTiles) {
 		var text = "The winner(s):";
 		var winners = self.game.getWinners();
@@ -76,10 +54,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 
 			if (selectedTile != tile1) {
 				if (this.game.checkMove(tile1, selectedTile)) {
-					//this.playerHasMatch(tile1, selectedTile);
 					this.game.addMatch(tile1, selectedTile);
-
-					this.checkMatchesLeft();
 				}
 				else {					
 					// Voegt rode gloed toe
@@ -96,16 +71,6 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 
 			eventTile1 = null;
 			tile1 = null;
-		}
-	}
-
-	/*this.playerHasMatch = function(tile1, tile2) {
-		this.game.addMatch(tile1, tile2);
-	}*/
-
-	this.checkMatchesLeft = function() {
-		if (!this.game.matchesLeft()) {
-			alert("There are no more matches. The game is over.");
 		}
 	}
 

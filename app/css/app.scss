@@ -34,7 +34,7 @@ html {
 		.tile { 
 			position: absolute;
 			left: 10px;
-			top: 75px;
+			top: 50px;
 			@include box-shadow-mahjong-mayhem();
 			@include tile-size();
 		}

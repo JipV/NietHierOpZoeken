@@ -14,9 +14,6 @@ module.exports = function(gamesFactory, idGame) {
 
 	this.gamesFactory.getTiles(this.id, function(tiles){
 		self.tiles = tiles;
-		/*for (var i = 0; i < self.tiles.length; i++) {
-			console.log(self.tiles[i]);
-		}*/
 	});
 
 	/*this.getTiles = function() {
@@ -37,21 +34,16 @@ module.exports = function(gamesFactory, idGame) {
 		var leftFree = this.checkTileSide(tile, 'left');
 		var rightFree = this.checkTileSide(tile, 'right');
 		var topFree = true;
-		//console.log("leftFree: " + leftFree);
-		//console.log("rightFree: " + rightFree);
 		for (var x = tile.xPos -1; x <= tile.xPos +1; x++) {
 			for (var y = tile.yPos -1; y <= tile.yPos +1; y++) {
 				for(var i = 0; i < this.tiles.length; i++){
 					if(this.tiles[i].xPos == x && this.tiles[i].yPos == y && 
 					   this.tiles[i].zPos == tile.zPos + 1 && !this.isMatched(this.tiles[i])){
-					   	//console.log(this.tiles[i]);
-					   	//console.log(tile);
 						topFree = false;
 					}
 				}
 			}
 		}
-		//console.log("topFree: " + topFree);
 		return (leftFree || rightFree) && topFree ? true : false
 	}
 
@@ -109,11 +101,7 @@ module.exports = function(gamesFactory, idGame) {
 		for (var i = 0; i < self.tiles.length; i++) {
 			if (self.tiles[i].tile._id == matchedTile1.tile) {
 				self.tiles[i].match = matchedTile1.match;
-				console.log("Tile 1:");
-				console.log(self.tiles[i]);
 			} else if (self.tiles[i].tile._id == matchedTile2.tile) {
-				console.log("Tile 2:");
-				console.log(self.tiles[i]);
 				self.tiles[i].match = matchedTile2.match;
 			}
 		}
@@ -121,11 +109,11 @@ module.exports = function(gamesFactory, idGame) {
 	}
 
 	this.getWinners = function() {
-		var scores = {};
+		var scores = [];
 		for (var i = 0; i < self.players.length; i++) {
 
 			var score = 0;
-			for (var j = 0; j < self.tiles.length; i++) {
+			for (var j = 0; j < self.tiles.length; j++) {
 				if (self.tiles[j].hasOwnProperty("match") && 
 					self.tiles[j].match.foundBy == self.players[i]._id) {
 					
@@ -134,16 +122,16 @@ module.exports = function(gamesFactory, idGame) {
 			}
 
 			scores.push({
-				player: players[i],
+				player: self.players[i],
 				score: score
 			});
 		}
 
 		scores.sort(sortByScore);
 
-		var winners = {};
+		var winners = [];
 		for (var i = 0; i < scores.length; i++) {
-			if (winners[0].score == scores[i].score) {
+			if (scores[0].score == scores[i].score) {
 				winners.push(scores[i].player);
 			}
 		}
@@ -159,7 +147,7 @@ module.exports = function(gamesFactory, idGame) {
 	  	return 0;
 	}
 	
-	this.matchesLeft = function(){
+	/*this.matchesLeft = function(){
 		for(var x = 0; x < this.tiles.length; x++){
 			if(this.checkTileFreedom(this.tiles[x])){
 				this.freeTiles.push(this.tiles[x]);
@@ -177,5 +165,5 @@ module.exports = function(gamesFactory, idGame) {
 			}
 		}
 		return false;
-	}
+	}*/
 }
