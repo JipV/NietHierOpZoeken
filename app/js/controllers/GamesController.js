@@ -75,27 +75,29 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 	};
 
 	this.joinGame = function(game) {
-		swal({   
+		if(game){
+			swal({   
 			title: "Joining game!",   
 			text: progressBarToAdd,   
 			html: true,
 			showConfirmButton: false });
 
-		gamesFactory.joinGame(game._id, function(data){
-			for (var i in self.games) {
-		     if (self.games[i]._id == data._id) {
-		        self.games[i] = data;
-		        break;
-		     }
-		   }
-			swal.close();
-			window.setTimeout(function(){
-				swal({ title: game.createdBy.name + "'s game joined!", allowOutsideClick: true,  text: "You have successfully joined " +  game.createdBy.name + "'s game!'", 
-					type: "success", 
-					confirmButtonText: "Cool!", 
-					confirmButtonColor: self.confirmButtonColor});
-			}, 400)
-		});
+			gamesFactory.joinGame(game._id, function(data){
+				for (var i in self.games) {
+			     if (self.games[i]._id == data._id) {
+			        self.games[i] = data;
+			        break;
+			     }
+			   }
+				swal.close();
+				window.setTimeout(function(){
+					swal({ title: game.createdBy.name + "'s game joined!", allowOutsideClick: true,  text: "You have successfully joined " +  game.createdBy.name + "'s game!'", 
+						type: "success", 
+						confirmButtonText: "Cool!", 
+						confirmButtonColor: self.confirmButtonColor});
+				}, 400)
+			});
+		}
 	};
 
 	this.startGame = function(game) {

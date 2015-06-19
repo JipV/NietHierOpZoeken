@@ -2,11 +2,11 @@
 	<div class="jumbotron">
 		<div ng-show="isLoggedIn()">
 		  	<h1>oAuth</h1>
-		  	<p>Je bent ingelogd als {{user}}</p>
+		  	<p>You are logged in as {{user}}</p>
 	  	</div>
 	  	<div ng-show="!isLoggedIn()">
 	  	  	<h1>oAuth</h1>
-		  	<p>Je bent niet ingelogd!</p>
+		  	<p>You are not logged in yet!</p>
 		  	<p><button class="btn btn-primary btn-lg" ng-click="toLogin()" role="button">Login</button></p>
 	  	</div>
 	</div>

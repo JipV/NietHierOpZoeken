@@ -1,7 +1,7 @@
 module.exports = function(){
   	return {
 		restrict: 'E',
-		templateUrl: './views/directives/user.html',
+		templateUrl: 'views/directives/user.html',
 		
 		// PersonDirective.js
 		scope: {
@@ -12,7 +12,7 @@ module.exports = function(){
 			var self = this;
 
 			$scope.user = window.localStorage.getItem("email");
-
+			console.log('THe user is; ' + $scope.user);
 			$scope.isLoggedIn = function(){
 				if($scope.user){
 					return true;

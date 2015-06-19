@@ -27,11 +27,11 @@ describe("Example Directives", function() {
 		$compile = _$compile_;
 		$rootScope = _$rootScope_;
 	}));
-
+	
 	it('should render the person directive', function() { 
 		// Maak een nieuwe scope die de properties bevat die we willen testen
 		var $scope = $rootScope.$new();
-		$scope.user = "ebrandsm@student.avans.nl"
+		window.localStorage.setItem('email', "ebrandsm@student.avans.nl");
 		$scope.myFunctionWhenClickedOn = function() {
 			console.log('OnClick was called!');
 		};
@@ -47,6 +47,7 @@ describe("Example Directives", function() {
 
 		// We kunnen de html opvragen en vergelijken met wat we verwachten.
 		// In dit geval verwachten we dat de voor- en achternaam achter elkaar in een h3 staan.
-		expect(element.html()).to.have.string('<p class="ng-binding">Je bent ingelogd als ebrandsm@student.avans.nl</p>');
+		//expect(element.html()).to.have.string('<p class="ng-binding">Je bent ingelogd als ebrandsm@student.avans.nl</p>');
+		expect(element.html()).to.have.string('You are logged in as ebrandsm@student.avans.nl');
 	});
 });
