@@ -19,11 +19,11 @@ module.exports = function(){
 					return false
 				}
 			}
+
 			$scope.logOut = function(){
-				window.localStorage.removeItem("email") 
+				window.localStorage.removeItem("email")
 				$state.go('login');
 			}
-
 		},
 		
 		// PersonDirective.js
