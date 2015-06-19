@@ -22,7 +22,10 @@ module.exports = function (config) {
           // do not include tests or libraries
           // (these files will be instrumented by Istanbul)
           'app/**/*.js': ['coverage', 'browserify'],
-          'app/**/*.html': ['ng-html2js']
+          'app/**/**/*.html': ['ng-html2js'],
+          'app/views/directives/user.html': ['ng-html2js'],
+          
+
         },
 
         ngHtml2JsPreprocessor: {

@@ -176,6 +176,10 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 		this.gameType = gameType;
 		$("#selectGameType").html(this.gameType);
 	}
+
+	self.notifyUserClicked = function(){
+		console.log("Nofity user clicked")
+	};
 	
 	$state.go('home.opengames');
 }

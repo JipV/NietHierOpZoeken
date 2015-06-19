@@ -125,13 +125,9 @@ app.directive('creategame', function() {
   }
 });
 
-app.directive('user', function(){
-  return {
-    restrict: 'E',
-    templateUrl:'./views/directives/user.html',
-    controller: "UserController as uc"
-  }
-});
+var userDirective = require('../views/directives/js/userDirective.js');
+app.directive('user', userDirective);
+
 
 function setProgressBar(task, number){
   $("#loadingTask").html(task)
