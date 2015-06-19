@@ -119,6 +119,45 @@ module.exports = function(gamesFactory, idGame) {
 		}
 		self.processing = false;
 	}
+
+	this.getWinners = function() {
+		var scores = {};
+		for (var i = 0; i < self.players.length; i++) {
+
+			var score = 0;
+			for (var j = 0; j < self.tiles.length; i++) {
+				if (self.tiles[j].hasOwnProperty("match") && 
+					self.tiles[j].match.foundBy == self.players[i]._id) {
+					
+					score++;
+				}
+			}
+
+			scores.push({
+				player: players[i],
+				score: score
+			});
+		}
+
+		scores.sort(sortByScore);
+
+		var winners = {};
+		for (var i = 0; i < scores.length; i++) {
+			if (winners[0].score == scores[i].score) {
+				winners.push(scores[i].player);
+			}
+		}
+
+		return winners;
+	}
+
+	function sortByScore(a, b) {
+		if (a.score > b.score)
+	    	return -1;
+	  	if (a.score < b.score)
+	    	return 1;
+	  	return 0;
+	}
 	
 	this.matchesLeft = function(){
 		for(var x = 0; x < this.tiles.length; x++){

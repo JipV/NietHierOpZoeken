@@ -31,9 +31,23 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	
 	var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
 	socket.on("match", function(matchedTiles) {
-		console.log(matchedTiles);
 		self.game.setTilesMatched(matchedTiles);
 		$scope.$apply();
+	});
+	socket.on("end", function(matchedTiles) {
+		var text = "The winner(s):";
+		var winners = self.game.getWinners();
+		for (var i = 0; i < winners.length; i++) {
+			text = text + " " + winners[i].name;
+			if (i != winners.length-1) {
+				text = text + ",";
+			}
+		}
+		swal({  
+			title: "Game finished!",  
+			text: text,  
+			showConfirmButton: true
+		});
 	});
 	
 	var eventTile1 = null;
