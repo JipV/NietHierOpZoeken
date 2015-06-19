@@ -62,9 +62,10 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 
 			if (selectedTile != tile1) {
 				if (this.game.checkMove(tile1, selectedTile)) {
-					$(targetTile1).remove();
-					$(targetTile2).remove();
-					this.playerHasMatch(tile1, selectedTile);
+					//this.playerHasMatch(tile1, selectedTile);
+
+					this.game.addMatch(tile1, selectedTile);
+
 					this.checkMatchesLeft();
 				}
 				else {					
@@ -85,9 +86,9 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 		}
 	}
 
-	this.playerHasMatch = function(tile1, tile2) {
+	/*this.playerHasMatch = function(tile1, tile2) {
 		this.game.addMatch(tile1, tile2);
-	}
+	}*/
 
 	this.checkMatchesLeft = function() {
 		if (!this.game.matchesLeft()) {
