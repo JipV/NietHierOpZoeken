@@ -86,18 +86,22 @@ module.exports = function(gamesFactory, idGame) {
 
 	this.addMatch = function(tile1, tile2){
 		self.gamesFactory.addMatch(self.id, tile1._id, tile2._id, function(matchedTiles){
-			var matchedTile1 = matchedTiles[0];
-			var matchedTile2 = matchedTiles[1];
-
-			if (matchedTile1.tile == tile1.tile._id && matchedTile2.tile == tile2.tile._id) {
-				tile1.match = matchedTile1.match;
-				tile2.match = matchedTile2.match;
-			}
-			else {
-				tile1.match = matchedTile2.match;
-				tile2.match = matchedTile1.match;
-			}
+			this.setTilesMatched(matchedTiles);
 		});
+	}
+
+	this.setTilesMatched = function(matchedTiles) {
+		var matchedTile1 = matchedTiles[0];
+		var matchedTile2 = matchedTiles[1];
+
+		if (matchedTile1.tile == tile1.tile._id && matchedTile2.tile == tile2.tile._id) {
+			tile1.match = matchedTile1.match;
+			tile2.match = matchedTile2.match;
+		}
+		else {
+			tile1.match = matchedTile2.match;
+			tile2.match = matchedTile1.match;
+		}
 	}
 	
 	this.matchesLeft = function(){
