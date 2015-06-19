@@ -1,5 +1,6 @@
 module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	
+	var self = this;
 	this.activeTab = "gameboard";
 
 	var Game = require("./../models/game");
@@ -32,7 +33,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
 	socket.on("match", function(matchedTiles) {
 		console.log(matchedTiles);
-		this.game.setTilesMatched(matchedTiles);
+		self.game.setTilesMatched(matchedTiles);
 	});
 	
 	var eventTile1 = null;
