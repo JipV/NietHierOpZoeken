@@ -86,8 +86,7 @@ module.exports = function(gamesFactory, idGame) {
 
 	this.addMatch = function(tile1, tile2){
 		self.gamesFactory.addMatch(self.id, tile1._id, tile2._id, function(matchedTiles){
-			self.setTilesMatched(matchedTiles);
-			var matchedTile1 = matchedTiles[0];
+			/*var matchedTile1 = matchedTiles[0];
 			var matchedTile2 = matchedTiles[1];
 
 			if (matchedTile1.tile == tile1.tile._id && matchedTile2.tile == tile2.tile._id) {
@@ -97,7 +96,7 @@ module.exports = function(gamesFactory, idGame) {
 			else {
 				tile1.match = matchedTile2.match;
 				tile2.match = matchedTile1.match;
-			}
+			}*/
 		});
 	}
 
@@ -108,7 +107,11 @@ module.exports = function(gamesFactory, idGame) {
 		for (var i = 0; i < self.tiles.length; i++) {
 			if (self.tiles[i].tile._id == matchedTile1.tile) {
 				self.tiles[i].match = matchedTile1.match;
+				console.log("Tile 1:");
+				console.log(self.tiles[i]);
 			} else if (self.tiles[i].tile._id == matchedTile2.tile) {
+				console.log("Tile 2:");
+				console.log(self.tiles[i]);
 				self.tiles[i].match = matchedTile2.match;
 			}
 		}
