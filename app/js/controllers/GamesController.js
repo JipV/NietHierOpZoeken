@@ -39,14 +39,13 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 			//Implementeer success (Alle gegevens zijn goed )
 			$("#addProgressBarHere").append(progressBarToAdd)
 			self.creatingGame = true
-			console.log("HALLOOOO");
 			gamesFactory.createGame(this.gameType, minPlayers, maxPlayers, function(newGame){
 				self.games.push(newGame);
+				self.joinSocket(newGame);
 				$("#progressBarToRemove").remove()
 				swal({ title: "Game created!", text: "The game is added to 'My games'", type: "success", confirmButtonText: "Cool!", 
 					confirmButtonColor: self.confirmButtonColor
 				}, function(){
-						console.log("HALLOOOO2");
 						self.creatingGame = false
 						self.goToOwnedGames();
 				});
@@ -158,6 +157,56 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 		}
 	}
 
+	this.joinSockets = function(){
+		self.games.forEach(function(game){
+			self.joinSocket(game);
+		});
+	}
+
+	this.joinSocket = function(game){
+		var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + game._id, {'force new connection': true });
+		socket["game"] = game;
+		socket.on("playerJoined", function(player) {
+			if(player._id != self.user._id){
+				socket.game.players.push({_id: player._id, id: player._id, name: player.name, __v: player.__v })
+				if(self.isOwnedGame(socket.game)){
+					swal.close();
+					$scope.$apply();
+					window.setTimeout(function(){
+						swal({  
+						title: player.name + " joined!",  
+						text: player.name + " has just joined your " + socket.game.gameTemplate._id + " game!",  
+						timer: 2000, showConfirmButton: false });
+					}, 400)
+				};
+			}
+		});
+		socket.on("start", function(){
+			if(socket.game.createdBy._id != self.user._id && self.isOwnedGame(socket.game)){
+				socket.game.state = "playing"
+				swal.close();
+				$scope.$apply();
+				window.setTimeout(function(){
+						swal({   
+						title: "Game started!",   
+						text: socket.game.createdBy.name + " just started a " + socket.game.gameTemplate._id + " game!",      
+						showCancelButton: true,   
+						confirmButtonColor: self.confirmButtonColor,   
+						confirmButtonText: "Go to game!",   
+						cancelButtonText: "Cool!",  
+						allowOutsideClick: true,  
+						closeOnConfirm: true,   
+						closeOnCancel: true }, function(isConfirm){   
+							if (isConfirm) {     
+								self.showGame(socket.game);
+							}
+						});
+				}, 400)
+			}
+		});
+		self.sockets.push(socket);
+	}
+
 	this.isSelfCreatedGame = function(game){
 		return this.user._id == game.createdBy._id;
 	}
@@ -187,4 +236,6 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 	};
 	
 	$state.go('home.opengames');
+
+	this.joinSockets();
 }

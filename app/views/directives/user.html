@@ -3,6 +3,7 @@
 		<div ng-show="isLoggedIn()">
 		  	<h1>oAuth</h1>
 		  	<p>You are logged in as {{user}}</p>
+		  	<p><button class="btn btn-primary btn-lg" ng-click="logOut()" role="button">Logout</button></p>
 	  	</div>
 	  	<div ng-show="!isLoggedIn()">
 	  	  	<h1>oAuth</h1>

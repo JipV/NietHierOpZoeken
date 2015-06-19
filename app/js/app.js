@@ -20,14 +20,10 @@ app.factory("loginFactory", loginFactory);
 //Controllers
 var gamesController = require("./controllers/GamesController");
 var gameController = require("./controllers/GameController");
-var loginController = require("./controllers/LoginController");
-var userController = require("./controllers/UserController");
 var callbackController = require("./controllers/CallbackController");
 
 app.controller("GamesController", gamesController);
 app.controller("GameController", gameController);
-app.controller("loginController", loginController);
-app.controller("UserController", userController);
 app.controller("callbackController", callbackController)
 
 // Filters
@@ -44,7 +40,7 @@ app.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
   $stateProvider
     .state('login', {
       url: "/",
-      controller: loginController,
+      controller: function($scope){},
       templateUrl:"./views/login.html"
     })
     .state('home', {
