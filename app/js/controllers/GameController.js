@@ -33,6 +33,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	socket.on("match", function(matchedTiles) {
 		console.log(matchedTiles);
 		self.game.setTilesMatched(matchedTiles);
+		$scope.$apply();
 	});
 	
 	var eventTile1 = null;
