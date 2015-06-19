@@ -40,7 +40,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	var tile1 = null;
 
 	this.selectTile = function(event, selectedTile) {
-
+		console.log("Select tile");
 		// Als de tegel niet vrij is, dan doe niks
 		if (!this.game.checkTileFreedom(selectedTile)) {
 			return;
@@ -56,6 +56,9 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 		else {
 			var targetTile1 = eventTile1.target;
 			var targetTile2 = event.target;
+
+			console.log(targetTile1);
+			console.log(targetTile2);
 
 			// Haalt blauwe gloed weg
 			$(targetTile1).removeClass('isSelected');
