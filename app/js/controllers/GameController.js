@@ -32,7 +32,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
 	socket.on("match", function(matchedTiles) {
 		console.log(matchedTiles);
-		this.setTilesMatched(matchedTiles);
+		this.game.setTilesMatched(matchedTiles);
 	});
 	
 	var eventTile1 = null;
