@@ -109,11 +109,7 @@ module.exports = function(gamesFactory, idGame) {
 		for (var i = 0; i < self.tiles.length; i++) {
 			if (self.tiles[i].tile._id == matchedTile1.tile) {
 				self.tiles[i].match = matchedTile1.match;
-				console.log("Tile 1:");
-				console.log(self.tiles[i]);
 			} else if (self.tiles[i].tile._id == matchedTile2.tile) {
-				console.log("Tile 2:");
-				console.log(self.tiles[i]);
 				self.tiles[i].match = matchedTile2.match;
 			}
 		}
@@ -121,11 +117,11 @@ module.exports = function(gamesFactory, idGame) {
 	}
 
 	this.getWinners = function() {
-		var scores = {};
+		var scores = [];
 		for (var i = 0; i < self.players.length; i++) {
 
 			var score = 0;
-			for (var j = 0; j < self.tiles.length; i++) {
+			for (var j = 0; j < self.tiles.length; j++) {
 				if (self.tiles[j].hasOwnProperty("match") && 
 					self.tiles[j].match.foundBy == self.players[i]._id) {
 					
@@ -134,16 +130,16 @@ module.exports = function(gamesFactory, idGame) {
 			}
 
 			scores.push({
-				player: players[i],
+				player: self.players[i],
 				score: score
 			});
 		}
 
 		scores.sort(sortByScore);
 
-		var winners = {};
+		var winners = [];
 		for (var i = 0; i < scores.length; i++) {
-			if (winners[0].score == scores[i].score) {
+			if (scores[0].score == scores[i].score) {
 				winners.push(scores[i].player);
 			}
 		}
