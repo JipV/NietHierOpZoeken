@@ -22,13 +22,18 @@ module.exports = function(gamesFactory, idGame) {
 		});
     };*/
 
-    this.checkPlayerInGame = function(player_id) {
-    	for (var i = 0; i < self.players.length; i++) {
-	    	if (self.players.[i]._id == player_id) {
-	    		return true;
-	    	}
-	    }
-    	return false;
+    this.checkPlayerInGame = function(player_id, callBack) {
+    	this.gamesFactory.getGame(self.id, function(game){
+			self.players = game.players;
+			for (var i = 0; i < self.players.length; i++) {
+		    	if (self.players[i]._id == player_id) {
+		    		callBack(true);
+		    		return;
+		    	}
+		    }
+	    	callBack(false);
+		});
+    	
     }
 
 	this.checkMove = function(tile, tile2) {

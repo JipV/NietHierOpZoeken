@@ -20,6 +20,9 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 	var stop;
 
 	this.showGame = function(game) {
+		for(var x = 0; x < self.sockets.length; x++){
+			self.socket[x].close();
+		}
 		$state.go('game', {id: game._id});
 	}
 
@@ -242,5 +245,5 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 	
 	$state.go('home.opengames');
 
-	this.joinSockets();
+	//this.joinSockets();
 }
