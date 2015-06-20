@@ -3,6 +3,7 @@ module.exports = function(gamesFactory, idGame) {
 	this.id = idGame;
 	this.players;
 	this.tiles;
+	this.state;
 	this.freeTiles = [];
 	this.processing = false;
 	
@@ -10,6 +11,7 @@ module.exports = function(gamesFactory, idGame) {
 	
 	this.gamesFactory.getGame(this.id, function(game){
 		self.players = game.players;
+		self.state = game.state;
 	});
 
 	this.gamesFactory.getTiles(this.id, function(tiles){
@@ -33,8 +35,14 @@ module.exports = function(gamesFactory, idGame) {
 		    }
 	    	callBack(false);
 		});
-    	
     }
+
+    /*this.checkGameIsFinished = function(callBack) {
+    	if (self.state == "finished") {
+			callBack(true);
+    	}
+    	callBack(false);
+    }*/
 
 	this.checkMove = function(tile, tile2) {
 		if (((tile.tile.matchesWholeSuit || tile2.tile.machtesWholeSuit) && tile.tile.suit == tile2.tile.suit) ||
