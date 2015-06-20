@@ -1,5 +1,4 @@
 module.exports = function($scope, $state, gamesFactory, $stateParams) {
-	
 	var self = this;
 	this.activeTab = "gameboard";
 	var Game = require("./../models/game");
@@ -13,6 +12,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	});
 
 	socket.on("end", function(matchedTiles) {
+		self.game.state = "finished";
 		var text = "The winner(s):";
 		var winners = self.game.getWinners();
 		for (var i = 0; i < winners.length; i++) {
@@ -35,7 +35,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 
 	this.selectTile = function(event, selectedTile) {
 		// Als de tegel niet vrij is, dan doe niks
-		if (!this.game.checkTileFreedom(selectedTile)) {
+		if (this.game.state == "finished" || !this.game.checkTileFreedom(selectedTile)) {
 			return;
 		}
 
@@ -77,16 +77,29 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 			tile1 = null;
 		}
 	}
-	console.log("HALLO");
-	this.game.checkPlayerInGame(window.localStorage.getItem("email"), function(playerIsInGame){
 
+	this.game.checkPlayerInGame(window.localStorage.getItem("email"), function(playerIsInGame) {
 		if(!playerIsInGame){
 			console.log("Spectator mode");
 			self.selectTile = function(event, selectedTile) {};
 		} else {
 			console.log("Not spectator mode");
 		}
-	}); 
+	});
+
+	/*this.game.checkGameIsFinished(function(gameIsFinished) {
+		if(gameIsFinished) {
+			console.log("Game is finished");
+			self.selectTile = function(event, selectedTile) {};
+		}
+		else {
+			console.log("Game is NOT finished");
+		}
+	});*/
+
+	/*if(this.game.state == "finished") {
+		self.selectTile = function(event, selectedTile) {};
+	}; */
 		
 
 	this.goBackToGames = function() {

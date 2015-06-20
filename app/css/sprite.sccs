@@ -1,0 +1,8 @@
+$toolbar-spacing: 5px;
+$toolbar-layout: "smart";
+
+@import "compass/utilities/sprites";
+@import "img/test/*.png";
+
+@include all-test-sprites;
+
