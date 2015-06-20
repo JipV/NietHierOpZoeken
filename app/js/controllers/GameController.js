@@ -5,7 +5,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	var Game = require("./../models/game");
 	this.game = new Game(gamesFactory, $stateParams["id"]);
 
-	var socket = io.connect("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id);
+	var socket = io("http://mahjongmayhem.herokuapp.com?gameId=" + this.game.id, { 'force new connection' : true });
 	
 	socket.on("match", function(matchedTiles) {
 		self.game.setTilesMatched(matchedTiles);
@@ -77,10 +77,17 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 			tile1 = null;
 		}
 	}
+	console.log("HALLO");
+	this.game.checkPlayerInGame(window.localStorage.getItem("email"), function(playerIsInGame){
 
-	if (!this.game.checkPlayerInGame(window.localStorage.getItem("email"))) {
-		this.selectTile = function(event, selectedTile) {};
-	}
+		if(!playerIsInGame){
+			console.log("Spectator mode");
+			self.selectTile = function(event, selectedTile) {};
+		} else {
+			console.log("Not spectator mode");
+		}
+	}); 
+		
 
 	this.goBackToGames = function() {
 		$state.go('home');

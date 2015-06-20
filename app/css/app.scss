@@ -25,6 +25,18 @@ html, body {
 	box-sizing: border-box;
 }
 
+.activityIndicator {
+	position: absolute;
+	height:30px;
+	right:50px;
+	width:300px;
+	top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+}
+
 html {
 	body {
 		font-family: $font-stack;
