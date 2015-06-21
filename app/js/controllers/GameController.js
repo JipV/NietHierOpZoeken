@@ -85,22 +85,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 		} else {
 			console.log("Not spectator mode");
 		}
-	});
-
-	/*this.game.checkGameIsFinished(function(gameIsFinished) {
-		if(gameIsFinished) {
-			console.log("Game is finished");
-			self.selectTile = function(event, selectedTile) {};
-		}
-		else {
-			console.log("Game is NOT finished");
-		}
-	});*/
-
-	/*if(this.game.state == "finished") {
-		self.selectTile = function(event, selectedTile) {};
-	}; */
-		
+	});		
 
 	this.goBackToGames = function() {
 		$state.go('home');

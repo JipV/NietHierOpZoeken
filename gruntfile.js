@@ -40,13 +40,13 @@ module.exports = function(grunt) {
    },
    compass: {
       dist: {
-        options: {              // Target options
+        options: {
           sassDir: 'app/css',
           cssDir: 'app/css',
           environment: 'production'
         }
       }
-    },
+   },
    clean: {
       build: {
         force: true,
@@ -54,6 +54,10 @@ module.exports = function(grunt) {
       }
     },
    watch: {
+    compass: {
+      files: ['app/**/*.scss'],
+      tasks: ['compass:dist']
+    },
    	js: {
        files: "app/**/*.js",
        tasks: "browserify"

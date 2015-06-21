@@ -8,12 +8,16 @@
 #require 'rgbapng'
 # Require any additional compass plugins here.
 
-project_type = :stand_alone
-# Set this to the root of your project when deployed:
+require 'compass'
+
+#project_type = :stand_alone
+
+preferred_syntax = :sass
 http_path = "/"
 sass_dir = "app/css"
 css_dir = "app/css"
 images_dir = "app/img"
+http_images_path = "app/img"
 javascripts_dir = "app/js"
 line_comments = true
 output_style = :compressed
