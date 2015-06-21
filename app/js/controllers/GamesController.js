@@ -245,5 +245,4 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 	
 	$state.go('home.opengames');
 
-	//this.joinSockets();
 }

@@ -18,12 +18,6 @@ module.exports = function(gamesFactory, idGame) {
 		self.tiles = tiles;
 	});
 
-	/*this.getTiles = function() {
-		this.gamesFactory.getTiles(this.id, function(tiles){
-			self.tiles = tiles;
-		});
-    };*/
-
     this.checkPlayerInGame = function(player_id, callBack) {
     	this.gamesFactory.getGame(self.id, function(game){
 			self.players = game.players;
@@ -36,13 +30,6 @@ module.exports = function(gamesFactory, idGame) {
 	    	callBack(false);
 		});
     }
-
-    /*this.checkGameIsFinished = function(callBack) {
-    	if (self.state == "finished") {
-			callBack(true);
-    	}
-    	callBack(false);
-    }*/
 
 	this.checkMove = function(tile, tile2) {
 		if (((tile.tile.matchesWholeSuit || tile2.tile.machtesWholeSuit) && tile.tile.suit == tile2.tile.suit) ||
@@ -102,19 +89,6 @@ module.exports = function(gamesFactory, idGame) {
 	this.addMatch = function(tile1, tile2){
 		self.processing = true;
 		self.gamesFactory.addMatch(self.id, tile1._id, tile2._id);
-		/*self.gamesFactory.addMatch(self.id, tile1._id, tile2._id, function(matchedTiles){
-			var matchedTile1 = matchedTiles[0];
-			var matchedTile2 = matchedTiles[1];
-
-			if (matchedTile1.tile == tile1.tile._id && matchedTile2.tile == tile2.tile._id) {
-				tile1.match = matchedTile1.match;
-				tile2.match = matchedTile2.match;
-			}
-			else {
-				tile1.match = matchedTile2.match;
-				tile2.match = matchedTile1.match;
-			}
-		});*/
 	}
 
 	this.setTilesMatched = function(matchedTiles) {
