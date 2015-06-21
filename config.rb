@@ -14,8 +14,8 @@ require 'compass'
 
 preferred_syntax = :sass
 http_path = "/"
-sass_dir = "app/css"
-css_dir = "app/css"
+sass_dir = "app/css/compass"
+css_dir = "app/css/compass"
 images_dir = "app/img"
 http_images_path = "app/img"
 javascripts_dir = "app/js"

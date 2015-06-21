@@ -190,33 +190,7 @@
 163
 164
 165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+166</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -236,12 +210,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -252,13 +220,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -320,19 +281,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -427,12 +375,6 @@
 <span class="cstat-no" title="statement not covered" >		self.tiles = tiles;</span>
 	});
 &nbsp;
-	/*this.getTiles = function() {
-		this.gamesFactory.getTiles(this.id, function(tiles){
-			self.tiles = tiles;
-		});
-    };*/
-&nbsp;
 <span class="cstat-no" title="statement not covered" >    this.checkPlayerInGame = <span class="fstat-no" title="function not covered" >function(player_id, callBack) {</span></span>
 <span class="cstat-no" title="statement not covered" >    	this.gamesFactory.getGame(self.id, <span class="fstat-no" title="function not covered" >function(game){</span></span>
 <span class="cstat-no" title="statement not covered" >			self.players = game.players;</span>
@@ -445,13 +387,6 @@
 <span class="cstat-no" title="statement not covered" >	    	callBack(false);</span>
 		});
     }
-&nbsp;
-    /*this.checkGameIsFinished = function(callBack) {
-    	if (self.state == "finished") {
-			callBack(true);
-    	}
-    	callBack(false);
-    }*/
 &nbsp;
 <span class="cstat-no" title="statement not covered" >	this.checkMove = <span class="fstat-no" title="function not covered" >function(tile, tile2) {</span></span>
 <span class="cstat-no" title="statement not covered" >		if (((tile.tile.matchesWholeSuit || tile2.tile.machtesWholeSuit) &amp;&amp; tile.tile.suit == tile2.tile.suit) ||</span>
@@ -511,19 +446,6 @@
 <span class="cstat-no" title="statement not covered" >	this.addMatch = <span class="fstat-no" title="function not covered" >function(tile1, tile2){</span></span>
 <span class="cstat-no" title="statement not covered" >		self.processing = true;</span>
 <span class="cstat-no" title="statement not covered" >		self.gamesFactory.addMatch(self.id, tile1._id, tile2._id);</span>
-		/*self.gamesFactory.addMatch(self.id, tile1._id, tile2._id, function(matchedTiles){
-			var matchedTile1 = matchedTiles[0];
-			var matchedTile2 = matchedTiles[1];
-&nbsp;
-			if (matchedTile1.tile == tile1.tile._id &amp;&amp; matchedTile2.tile == tile2.tile._id) {
-				tile1.match = matchedTile1.match;
-				tile2.match = matchedTile2.match;
-			}
-			else {
-				tile1.match = matchedTile2.match;
-				tile2.match = matchedTile1.match;
-			}
-		});*/
 	}
 &nbsp;
 <span class="cstat-no" title="statement not covered" >	this.setTilesMatched = <span class="fstat-no" title="function not covered" >function(matchedTiles) {</span></span>
@@ -603,7 +525,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 21 2015 16:03:36 GMT+0200 (West-Europa (zomertijd))</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Jun 21 2015 22:53:20 GMT+0200 (W. Europe Daylight Time)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

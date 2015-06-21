@@ -1,4 +1,4 @@
-describe("GamesController", function() {
+describe("GamesController test", function() {
 	var gamesController;
 	var gamesFactory;
 	var httpBackend;

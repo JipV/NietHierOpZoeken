@@ -80,10 +80,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 
 	this.game.checkPlayerInGame(window.localStorage.getItem("email"), function(playerIsInGame) {
 		if(!playerIsInGame){
-			console.log("Spectator mode");
 			self.selectTile = function(event, selectedTile) {};
-		} else {
-			console.log("Not spectator mode");
 		}
 	});		
 

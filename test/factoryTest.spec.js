@@ -1,4 +1,4 @@
-describe("Stubbing and Mocking", function() {
+describe("Factory tests", function() {
 	var $httpBackend,
 		$controller,
 		GamesFactory;

@@ -12,14 +12,19 @@ module.exports = function(grunt) {
      }
    },
    copy: {
-
 	   all: {
        // This copies all the html and css into the dist/ folder
        expand: true,
        cwd: 'app/',
-       src: ['**/*.html', '**/*.css', '**/*.png'],
+       src: ['**/*.html', '**/*.css', '**/*.png', 'lib/**'],
        dest: 'dist/',
-     }
+     }, 
+     files: {
+      cwd: 'lib',  // set working folder / root to copy
+      src: '**/*',           // copy all files and subfolders
+      dest: 'dist/lib',    // destination folder
+      expand: true           // required when using cwd
+    }
    },
    concat: {
       sass: {

@@ -1,4 +1,4 @@
-describe("Example Directives", function() {
+describe("Directives test", function() {
 	var userDirective;
 	var $compile;
 	var $rootScope;
