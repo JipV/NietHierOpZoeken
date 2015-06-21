@@ -1,7 +1,0 @@
-$test-layout: "smart";
-
-@import "compass/utilities/sprites";
-@import "test/*.png";
-
-@include all-test-sprites;
-

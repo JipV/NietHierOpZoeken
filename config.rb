@@ -15,5 +15,5 @@ sass_dir = "app/css"
 css_dir = "app/css"
 images_dir = "app/img"
 javascripts_dir = "app/js"
-line_comments = false
-output_style = :expanded
+line_comments = true
+output_style = :compressed

@@ -1,7 +1,10 @@
 node_modules/
-dist/
 coverage/
 coverage
-dist
+dist/css
+dist/img
+dist/js
+dist/views
+dist/index.html
 dist/js/app.js
 coverage/Chrome 43.0.2357 (Windows 7 0.0.0)/index.html

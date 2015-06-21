@@ -38,6 +38,15 @@ module.exports = function(grunt) {
         }
       }
    },
+   compass: {
+      dist: {
+        options: {              // Target options
+          sassDir: 'app/css',
+          cssDir: 'app/css',
+          environment: 'production'
+        }
+      }
+    },
    clean: {
       build: {
         force: true,
@@ -70,10 +79,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   // The default tasks to run when you type: grunt
-  grunt.registerTask('default', ['concat', 'browserify', 'sass', 'copy']);
+  grunt.registerTask('default', ['concat', 'browserify', 'sass', 'copy', 'compass']);
 };
 	 
 	 
