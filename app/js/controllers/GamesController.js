@@ -35,8 +35,7 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 	this.createGame = function() {
 		var minPlayers = $("#minPlayers").val();
 		var maxPlayers = $("#maxPlayers").val();
-		if(minPlayers != "" && maxPlayers != "" && minPlayers > 0 && minPlayers < 33 && maxPlayers > 0 && maxPlayers < 33 && maxPlayers > minPlayers){
-			//Implementeer success (Alle gegevens zijn goed )
+		if(minPlayers != "" && maxPlayers != "" && minPlayers > 1 && minPlayers < 33 && maxPlayers > 1 && maxPlayers < 33 && maxPlayers > minPlayers){
 			$("#addProgressBarHere").append(progressBarToAdd)
 			self.creatingGame = true
 			gamesFactory.createGame(this.gameType, minPlayers, maxPlayers, function(newGame){
@@ -52,7 +51,7 @@ module.exports = function($scope, $state, $timeout, gamesFactory, retreivedGames
 			});
 		} else {
 			$("#alertToRemove").remove()
-			$("#createGame").append('<div id="alertToRemove" class="alert alert-danger myAlert" role="alert">De game voldoet niet aan een van deze eisen: </br> minPlayers != undefined && maxPlayers != undefined && minPlayers > 1 && minPlayers < 32 && maxPlayers > 0 && maxPlayers < 33 && maxPlayers > minPlayers</div>')
+			$("#createGame").append('<div id="alertToRemove" class="alert alert-danger myAlert" role="alert">De game voldoet niet aan een van deze eisen: </br> minPlayers != undefined && maxPlayers != undefined && minPlayers > 1 && minPlayers < 32 && maxPlayers > 1 && maxPlayers < 33 && maxPlayers > minPlayers</div>')
 			$(".myAlert").dequeue();
 			$(".myAlert").css("opacity", 0);
 			$(".myAlert").clearQueue();
